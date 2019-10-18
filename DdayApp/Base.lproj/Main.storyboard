@@ -18,15 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAR-5E-Gck">
-                                <rect key="frame" x="193" y="81" width="28" height="21"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFl-fG-jdh">
+                                <rect key="frame" x="0.0" y="55" width="414" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93044537305831909" green="0.93806600570678711" blue="0.97948211431503296" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ws1-v1-gbJ">
+                                <rect key="frame" x="79" y="285" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct, 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM0-kM-W46">
+                                <rect key="frame" x="155.5" y="69" width="103" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NMbtn" translatesAutoresizingMaskIntoConstraints="NO" id="6wx-p5-NDh">
+                                <rect key="frame" x="298.5" y="62" width="40" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="4nt-y6-t8s"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="LgJ-H6-PZO"/>
+                                    <constraint firstAttribute="height" constant="45" id="l9X-er-LgI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LMbtn" translatesAutoresizingMaskIntoConstraints="NO" id="whL-kN-oCj">
+                                <rect key="frame" x="75.5" y="62" width="40" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="68p-Lg-dKb"/>
+                                    <constraint firstAttribute="height" constant="45" id="aje-q5-1OL"/>
+                                    <constraint firstAttribute="width" constant="40" id="g3i-ka-Tic"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hM0-kM-W46" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4XH-0d-hrK"/>
+                            <constraint firstItem="6wx-p5-NDh" firstAttribute="leading" secondItem="hM0-kM-W46" secondAttribute="trailing" constant="40" id="LBl-b3-Y2P"/>
+                            <constraint firstItem="hM0-kM-W46" firstAttribute="leading" secondItem="whL-kN-oCj" secondAttribute="trailing" constant="40" id="QmI-BR-YXm"/>
+                            <constraint firstItem="6wx-p5-NDh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="UCC-la-Pc6"/>
+                            <constraint firstItem="whL-kN-oCj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="YlY-us-c6F"/>
+                            <constraint firstItem="hM0-kM-W46" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Z0s-S3-taE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -35,4 +70,8 @@
             <point key="canvasLocation" x="131.8840579710145" y="90.401785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LMbtn" width="24" height="24"/>
+        <image name="NMbtn" width="24" height="24"/>
+    </resources>
 </document>
