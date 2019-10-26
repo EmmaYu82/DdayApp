@@ -174,7 +174,7 @@ class Core
         return WeekText
     }
     
-    func findToFirst(year : Int, month : Int) -> Int{
+    func findToFirst() -> Int{
         let str = String(curYear) + "-" + String(curMonth)
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM"
@@ -193,9 +193,24 @@ class Core
         return numdays!
     }
     
-    func UpdateCalinder(){
-        //findToFirst(year: curYear, month: curMonth)
-        //GetNumDays()
+    func GetDayTable()->Array<String>{
+        let startPos = findToFirst()
+        let numDays = GetNumDays()
+        var str : [String] = []
+        
+        for i in 1..<startPos{
+            str.append(" ")
+        }
+        
+        for i in 0..<numDays{
+            str.append(String(i+1))
+        }
+        
+        for i in 0..<40-startPos-numDays{
+            str.append(" ")
+        }
+        
+        return str
     }
     
 }
