@@ -198,15 +198,15 @@ class Core
         let numDays = GetNumDays()
         var str : [String] = []
         
-        for i in 1..<startPos{
+        for _ in 1..<startPos{
             str.append(" ")
         }
         
-        for i in 0..<numDays{
-            str.append(String(i+1))
+        for i in 1...numDays{
+            str.append(String(i))
         }
         
-        for i in 0..<40-startPos-numDays{
+        for _ in 0..<40-startPos-numDays{
             str.append(" ")
         }
         
