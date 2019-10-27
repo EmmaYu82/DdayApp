@@ -31,7 +31,6 @@
 		691AF41523262A140011D64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9A2B9A3236406A200023522 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		C9A2BAB32365711C00023522 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		C9A2BAB72365715900023522 /* DdayApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DdayApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		C9A2BAB82365715900023522 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		C9A2BAB92365715900023522 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		C9A2BABA2365715900023522 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		C9A2BAC02365715900023522 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		C9A2BAC12365715A00023522 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		C9A2BAC22365715A00023522 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		C9A2BAC92365729900023522 /* DdayApp.xcodeproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "wrapper.pb-project"; name = DdayApp.xcodeproj; path = ../DdayApp.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,6 @@
 				691AF40823262A130011D64F /* DdayApp */,
 				691AF40723262A130011D64F /* Products */,
 				C9A2BAB22365711C00023522 /* Frameworks */,
-				C9A2BAB72365715900023522 /* DdayApp-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +100,7 @@
 		C9A2BAC82365717800023522 /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
+				C9A2BAC92365729900023522 /* DdayApp.xcodeproj */,
 				C9A2BAC02365715900023522 /* FMDatabase.h */,
 				C9A2BABF2365715900023522 /* FMDatabase.m */,
 				C9A2BAC12365715A00023522 /* FMDatabaseAdditions.h */,
@@ -350,7 +350,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = swift.DdayApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DdayApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FMDB/DdayApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,7 +370,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = swift.DdayApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DdayApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FMDB/DdayApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
