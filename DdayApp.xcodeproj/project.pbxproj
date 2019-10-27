@@ -42,7 +42,7 @@
 		C9A2BAC02365715900023522 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		C9A2BAC12365715A00023522 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		C9A2BAC22365715A00023522 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		C9A2BAC92365729900023522 /* DdayApp.xcodeproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "wrapper.pb-project"; name = DdayApp.xcodeproj; path = ../DdayApp.xcodeproj; sourceTree = "<group>"; };
+		C9A2BACD2365772E00023522 /* DdayApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DdayApp-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 		C9A2BAC82365717800023522 /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2BAC92365729900023522 /* DdayApp.xcodeproj */,
+				C9A2BACD2365772E00023522 /* DdayApp-Bridging-Header.h */,
 				C9A2BAC02365715900023522 /* FMDatabase.h */,
 				C9A2BABF2365715900023522 /* FMDatabase.m */,
 				C9A2BAC12365715A00023522 /* FMDatabaseAdditions.h */,
