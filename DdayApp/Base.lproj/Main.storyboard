@@ -130,52 +130,75 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T09-x2-Wfy">
-                                <rect key="frame" x="30" y="219" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sun">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T09-x2-Wfy">
+                                <rect key="frame" x="39.5" y="214" width="35" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="EbF-Nu-BsD"/>
+                                    <constraint firstAttribute="height" constant="15" id="YwH-2o-iNN"/>
+                                </constraints>
+                                <state key="normal" title="Sun" image="Sun@1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWV-UC-fIO">
-                                <rect key="frame" x="70" y="220" width="50" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Mon" image="Mon">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWV-UC-fIO">
+                                <rect key="frame" x="89.5" y="214" width="35" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="CM8-ak-4EH"/>
+                                    <constraint firstAttribute="height" constant="15" id="iYa-k4-4L7"/>
+                                </constraints>
+                                <state key="normal" title="Mon" image="Mon@1">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmo-jf-uML">
-                                <rect key="frame" x="138" y="219" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Tue">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmo-jf-uML">
+                                <rect key="frame" x="139.5" y="214" width="35" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="bJu-SG-Vsi"/>
+                                    <constraint firstAttribute="height" constant="15" id="vDj-Wk-3co"/>
+                                </constraints>
+                                <state key="normal" title="Tue" image="Tue@1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-zd-ugr">
-                                <rect key="frame" x="191.5" y="219" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Wed">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-zd-ugr">
+                                <rect key="frame" x="189.5" y="214" width="35" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="6aO-yn-R6L"/>
+                                    <constraint firstAttribute="height" constant="15" id="go2-Dm-rk9"/>
+                                    <constraint firstAttribute="width" constant="35" id="pCd-y2-eIe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="yyB-0I-asS"/>
+                                </constraints>
+                                <state key="normal" title="Wed" image="Wed@1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93F-3z-ciN">
-                                <rect key="frame" x="246" y="219" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Thu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93F-3z-ciN">
+                                <rect key="frame" x="239.5" y="214" width="35" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Jtx-R2-VjG"/>
+                                    <constraint firstAttribute="width" constant="35" id="qYW-FK-Y2G"/>
+                                </constraints>
+                                <state key="normal" title="Thu" image="Thu@1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFQ-8u-pAc">
-                                <rect key="frame" x="300" y="219" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Fri">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFQ-8u-pAc">
+                                <rect key="frame" x="289.5" y="214" width="30" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Gap-jm-E6w"/>
+                                    <constraint firstAttribute="height" constant="15" id="zpj-KJ-vjw"/>
+                                </constraints>
+                                <state key="normal" title="Fri" image="Fri@1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWw-Fh-FfZ">
-                                <rect key="frame" x="357" y="219" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sat">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWw-Fh-FfZ">
+                                <rect key="frame" x="334.5" y="214" width="35" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="O7n-rA-Gda"/>
+                                    <constraint firstAttribute="height" constant="15" id="wPe-cQ-WEh"/>
+                                </constraints>
+                                <state key="normal" title="Sat" image="Sat@1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -554,7 +577,23 @@
                         <color key="backgroundColor" red="0.98431372549019602" green="0.94509803921568625" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sAQ-n7-qBk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="3bT-0g-LfA"/>
+                            <constraint firstItem="vmo-jf-uML" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="4Nx-YQ-jdc"/>
+                            <constraint firstItem="WWV-UC-fIO" firstAttribute="leading" secondItem="T09-x2-Wfy" secondAttribute="trailing" constant="15" id="7BN-h9-UX8"/>
+                            <constraint firstItem="KBD-zd-ugr" firstAttribute="leading" secondItem="vmo-jf-uML" secondAttribute="trailing" constant="15" id="8IF-14-7rL"/>
+                            <constraint firstItem="93F-3z-ciN" firstAttribute="leading" secondItem="KBD-zd-ugr" secondAttribute="trailing" constant="15" id="8Uj-ur-bCJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sAQ-n7-qBk" secondAttribute="trailing" constant="15" id="8f0-cL-77p"/>
+                            <constraint firstItem="KBD-zd-ugr" firstAttribute="leading" secondItem="vmo-jf-uML" secondAttribute="trailing" constant="15" id="Cxf-8y-QDl"/>
+                            <constraint firstItem="DWw-Fh-FfZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="Exp-ut-Lmg"/>
+                            <constraint firstItem="vmo-jf-uML" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="LhL-nc-0Qi"/>
+                            <constraint firstItem="DWw-Fh-FfZ" firstAttribute="leading" secondItem="gFQ-8u-pAc" secondAttribute="trailing" constant="15" id="Mhr-pX-G25"/>
+                            <constraint firstItem="T09-x2-Wfy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="Qpn-zC-ba5"/>
+                            <constraint firstItem="93F-3z-ciN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="UMo-yI-vce"/>
+                            <constraint firstItem="gFQ-8u-pAc" firstAttribute="leading" secondItem="93F-3z-ciN" secondAttribute="trailing" constant="15" id="UWs-gZ-K4r"/>
+                            <constraint firstItem="KBD-zd-ugr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dzW-zr-Kd2"/>
+                            <constraint firstItem="KBD-zd-ugr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="nJV-kn-ieA"/>
+                            <constraint firstItem="vmo-jf-uML" firstAttribute="leading" secondItem="WWV-UC-fIO" secondAttribute="trailing" constant="15" id="v1V-b6-OBD"/>
+                            <constraint firstItem="WWV-UC-fIO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="yfN-j9-6Py"/>
+                            <constraint firstItem="gFQ-8u-pAc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="170" id="z3Y-j8-lmd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -1089,13 +1128,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fri@1" width="256" height="142"/>
         <image name="LMbtn" width="24" height="24"/>
-        <image name="Mon" width="370" height="144"/>
+        <image name="Mon@1" width="370" height="144"/>
         <image name="NMbtn" width="24" height="24"/>
+        <image name="Sat@1" width="334" height="149"/>
+        <image name="Sun@1" width="341" height="148"/>
+        <image name="Thu@1" width="350" height="142"/>
+        <image name="Tue@1" width="357" height="142"/>
+        <image name="Wed@1" width="377" height="144"/>
         <image name="addbtn" width="32.5" height="32.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zTn-XL-jau"/>
+        <segue reference="Hn2-F9-xRq"/>
         <segue reference="YUh-0l-JQk"/>
     </inferredMetricsTieBreakers>
 </document>
