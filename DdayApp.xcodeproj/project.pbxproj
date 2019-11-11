@@ -12,6 +12,13 @@
 		691AF40F23262A130011D64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691AF40D23262A130011D64F /* Main.storyboard */; };
 		691AF41123262A140011D64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691AF41023262A140011D64F /* Assets.xcassets */; };
 		691AF41423262A140011D64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691AF41223262A140011D64F /* LaunchScreen.storyboard */; };
+		C909B0CF237694890003326D /* ViewTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B0CE237694890003326D /* ViewTheDay.swift */; };
+		C909B0D12376949E0003326D /* SetTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B0D02376949E0003326D /* SetTheDay.swift */; };
+		C909B0D3237694DA0003326D /* SelectTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B0D2237694DA0003326D /* SelectTheDay.swift */; };
+		C909B0D5237695500003326D /* DBClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B0D4237695500003326D /* DBClass.swift */; };
+		C909B0D72377E4EF0003326D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B0D62377E4EF0003326D /* TableViewController.swift */; };
+		C909B118237800D30003326D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B117237800D30003326D /* TableViewCell.swift */; };
+		C911832C23767C7F007D35A8 /* CalendarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C911832B23767C7F007D35A8 /* CalendarClass.swift */; };
 		C9A2B9A4236406A200023522 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2B9A3236406A200023522 /* Core.swift */; };
 		C9A2BAB42365711C00023522 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A2BAB32365711C00023522 /* libsqlite3.tbd */; };
 		C9A2BAC32365715A00023522 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A2BABA2365715900023522 /* FMResultSet.m */; };
@@ -29,6 +36,13 @@
 		691AF41023262A140011D64F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		691AF41323262A140011D64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		691AF41523262A140011D64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C909B0CE237694890003326D /* ViewTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTheDay.swift; sourceTree = "<group>"; };
+		C909B0D02376949E0003326D /* SetTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTheDay.swift; sourceTree = "<group>"; };
+		C909B0D2237694DA0003326D /* SelectTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTheDay.swift; sourceTree = "<group>"; };
+		C909B0D4237695500003326D /* DBClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBClass.swift; sourceTree = "<group>"; };
+		C909B0D62377E4EF0003326D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C909B117237800D30003326D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C911832B23767C7F007D35A8 /* CalendarClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarClass.swift; sourceTree = "<group>"; };
 		C9A2B9A3236406A200023522 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		C9A2BAB32365711C00023522 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C9A2BAB82365715900023522 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
@@ -85,6 +99,13 @@
 				691AF41223262A140011D64F /* LaunchScreen.storyboard */,
 				691AF41523262A140011D64F /* Info.plist */,
 				C9A2B9A3236406A200023522 /* Core.swift */,
+				C911832B23767C7F007D35A8 /* CalendarClass.swift */,
+				C909B0CE237694890003326D /* ViewTheDay.swift */,
+				C909B0D02376949E0003326D /* SetTheDay.swift */,
+				C909B0D2237694DA0003326D /* SelectTheDay.swift */,
+				C909B0D4237695500003326D /* DBClass.swift */,
+				C909B0D62377E4EF0003326D /* TableViewController.swift */,
+				C909B117237800D30003326D /* TableViewCell.swift */,
 			);
 			path = DdayApp;
 			sourceTree = "<group>";
@@ -188,11 +209,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C909B118237800D30003326D /* TableViewCell.swift in Sources */,
+				C909B0D5237695500003326D /* DBClass.swift in Sources */,
+				C909B0D72377E4EF0003326D /* TableViewController.swift in Sources */,
 				C9A2B9A4236406A200023522 /* Core.swift in Sources */,
+				C909B0CF237694890003326D /* ViewTheDay.swift in Sources */,
 				C9A2BAC72365715A00023522 /* FMDatabaseQueue.m in Sources */,
 				C9A2BAC52365715A00023522 /* FMDatabasePool.m in Sources */,
 				691AF40C23262A130011D64F /* ViewController.swift in Sources */,
 				C9A2BAC62365715A00023522 /* FMDatabase.m in Sources */,
+				C911832C23767C7F007D35A8 /* CalendarClass.swift in Sources */,
+				C909B0D12376949E0003326D /* SetTheDay.swift in Sources */,
+				C909B0D3237694DA0003326D /* SelectTheDay.swift in Sources */,
 				C9A2BAC32365715A00023522 /* FMResultSet.m in Sources */,
 				691AF40A23262A130011D64F /* AppDelegate.swift in Sources */,
 				C9A2BAC42365715A00023522 /* FMDatabaseAdditions.m in Sources */,
