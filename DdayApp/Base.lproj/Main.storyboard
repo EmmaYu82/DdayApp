@@ -27,18 +27,24 @@
                                 <color key="shadowColor" white="0.68832526409999994" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="-1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WC2-4P-mpI">
-                                <rect key="frame" x="50" y="321" width="109" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="시작일로 설정"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WC2-4P-mpI">
+                                <rect key="frame" x="50" y="333" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="InI-la-6Ut"/>
+                                    <constraint firstAttribute="height" constant="30" id="WAF-GA-2eR"/>
+                                </constraints>
+                                <state key="normal" title="시작일로 설정" image="start@1"/>
                                 <connections>
                                     <action selector="SetStartDay:" destination="m3j-oZ-5zS" eventType="touchUpInside" id="kEG-uM-HbT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unD-Sa-JRu">
-                                <rect key="frame" x="50" y="377" width="80" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="End Date"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unD-Sa-JRu">
+                                <rect key="frame" x="50" y="383" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Oc-sz-OmK"/>
+                                    <constraint firstAttribute="width" constant="30" id="QyV-zS-wS2"/>
+                                </constraints>
+                                <state key="normal" title="End Date" image="end@1"/>
                                 <connections>
                                     <action selector="SetEndDay:" destination="m3j-oZ-5zS" eventType="touchUpInside" id="YfM-ML-6Zr"/>
                                 </connections>
@@ -79,21 +85,40 @@
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="shadowColor" white="0.68832526409999994" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ET2-30-dAZ">
+                                <rect key="frame" x="95" y="389.5" width="61" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.7964016411" blue="0.67134408030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="shadowColor" white="0.68832526409999994" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6au-XK-EAd">
+                                <rect key="frame" x="95" y="340.5" width="68.5" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.7964016411" blue="0.67134408030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="shadowColor" white="0.68832526409999994" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.94509803920000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LbO-gi-Rvw" firstAttribute="top" secondItem="x7J-Jp-jfr" secondAttribute="bottom" constant="20" id="5ca-JF-ZCU"/>
                             <constraint firstItem="x7J-Jp-jfr" firstAttribute="leading" secondItem="V4H-08-CmR" secondAttribute="leading" constant="50" id="6WU-Ld-wY5"/>
+                            <constraint firstItem="coJ-I5-wFL" firstAttribute="top" secondItem="ET2-30-dAZ" secondAttribute="bottom" constant="30" id="Dk8-fB-GpG"/>
                             <constraint firstItem="x7J-Jp-jfr" firstAttribute="top" secondItem="unD-Sa-JRu" secondAttribute="bottom" constant="20" id="EJU-bX-INT"/>
                             <constraint firstItem="unD-Sa-JRu" firstAttribute="leading" secondItem="V4H-08-CmR" secondAttribute="leading" constant="50" id="FNM-wz-ck2"/>
+                            <constraint firstItem="6au-XK-EAd" firstAttribute="leading" secondItem="WC2-4P-mpI" secondAttribute="trailing" constant="15" id="LJF-bh-foy"/>
                             <constraint firstItem="coJ-I5-wFL" firstAttribute="centerY" secondItem="PeN-yu-vzM" secondAttribute="centerY" id="Ofe-ST-kDz"/>
+                            <constraint firstItem="WC2-4P-mpI" firstAttribute="leading" secondItem="V4H-08-CmR" secondAttribute="leading" constant="50" id="RMd-aO-lkn"/>
+                            <constraint firstItem="ET2-30-dAZ" firstAttribute="top" secondItem="6au-XK-EAd" secondAttribute="bottom" constant="30" id="Srj-eU-OG3"/>
+                            <constraint firstItem="unD-Sa-JRu" firstAttribute="leading" secondItem="V4H-08-CmR" secondAttribute="leading" constant="50" id="dw5-hr-bN7"/>
                             <constraint firstItem="unD-Sa-JRu" firstAttribute="top" secondItem="WC2-4P-mpI" secondAttribute="bottom" constant="20" id="gyZ-tj-SJ3"/>
                             <constraint firstItem="LbO-gi-Rvw" firstAttribute="leading" secondItem="V4H-08-CmR" secondAttribute="leading" constant="50" id="khg-sg-ntB"/>
                             <constraint firstItem="coJ-I5-wFL" firstAttribute="leading" secondItem="x7J-Jp-jfr" secondAttribute="trailing" constant="15" id="oaI-8f-vX5"/>
                             <constraint firstItem="x7J-Jp-jfr" firstAttribute="centerY" secondItem="PeN-yu-vzM" secondAttribute="centerY" id="qh0-jL-GdU"/>
                             <constraint firstItem="wi7-Ti-Pbl" firstAttribute="leading" secondItem="LbO-gi-Rvw" secondAttribute="trailing" constant="15" id="wAu-O9-qP9"/>
                             <constraint firstItem="wi7-Ti-Pbl" firstAttribute="top" secondItem="coJ-I5-wFL" secondAttribute="bottom" constant="30" id="wQq-7q-Rde"/>
-                            <constraint firstItem="WC2-4P-mpI" firstAttribute="leading" secondItem="V4H-08-CmR" secondAttribute="leading" constant="50" id="y89-Lc-s8c"/>
+                            <constraint firstItem="ET2-30-dAZ" firstAttribute="leading" secondItem="unD-Sa-JRu" secondAttribute="trailing" constant="15" id="zQ5-VG-Wj9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V4H-08-CmR"/>
                     </view>
@@ -1187,11 +1212,13 @@
         <image name="Tue@1" width="357" height="142"/>
         <image name="Wed@1" width="377" height="144"/>
         <image name="addbtn@1" width="375" height="379"/>
+        <image name="end@1" width="340" height="319"/>
         <image name="endbtn@1" width="375" height="375"/>
         <image name="heartStk@1" width="376" height="359"/>
+        <image name="start@1" width="342" height="319"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Hn2-F9-xRq"/>
-        <segue reference="9TZ-Zd-FK0"/>
+        <segue reference="YUh-0l-JQk"/>
     </inferredMetricsTieBreakers>
 </document>
