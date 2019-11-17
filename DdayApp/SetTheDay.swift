@@ -17,6 +17,10 @@ class SetTheDay: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource{
     var TermArray = ["1","2","3","4","5","6","7"]
     var CycleArray = ["35","34","33","32","31","30","29","28","27","26","25"]
     
+    var core = Core()
+    var Param = ConfigDataParam()
+    var TempParam = ConfigDataParam()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,16 +28,43 @@ class SetTheDay: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource{
         SetTerm.dataSource = self
         SetCycle.delegate = self
         SetCycle.dataSource = self
-        AutoSet.setOn(false, animated: true)
-        // Do any additional setup after loading the view.
+        
+        core.CreateDB()
+        core.GetGetConfigParam(info: Param)
+        
+        if Param.AutoCal == "0"{
+            AutoSet.setOn(false, animated: true)
+            SetTerm.isHidden = false
+            SetCycle.isHidden = false
+            SetTermValue.text = Param.Term + "일"
+            SetCycleValue.text = Param.Cycle + "일"
+        }
+        else{
+            AutoSet.setOn(true, animated: true)
+            SetTerm.isHidden = true
+            SetCycle.isHidden = true
+            SetTermValue.text = core.GetAvrTerm(info: Param) + "일"
+            SetCycleValue.text = core.GetAvrCycle(info: Param) + "일"
+            if(SetTermValue.text == "0" || SetCycleValue.text == "0"){
+                SetTermValue.text = Param.Term
+                SetCycleValue.text = Param.Cycle
+            }
+            
+        }
     }
     
     @IBAction func OnAutoSet(_ sender: Any) {
         if AutoSet.isOn{
-            print("AutoSet is On")
+            SetTermValue.text = core.GetAvrTerm(info: Param) + "일"
+            SetCycleValue.text = core.GetAvrCycle(info: Param) + "일"
+            Param.AutoCal = "1"
+            SetTerm.isHidden = true
+            SetCycle.isHidden = true
         }
         else{
-            print("AutoSet is Off")
+            Param.AutoCal = "0"
+            SetTerm.isHidden = false
+            SetCycle.isHidden = false
         }
     }
     
@@ -70,22 +101,19 @@ class SetTheDay: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let cell = (pickerView.restorationIdentifier)!
         if(cell == "term"){
+            Param.Term = TermArray[row]
             SetTermValue.text = TermArray[row] + "일"
         }
         else if(cell == "cycle"){
+            Param.Cycle = CycleArray[row]
             SetCycleValue.text = CycleArray[row] + "일"
         }
         else{
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func SaveSet(_ sender: Any) {
+        core.UpDateConfigParam(info: Param)
     }
-    */
-
+    
 }

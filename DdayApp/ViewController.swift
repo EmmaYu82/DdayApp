@@ -35,27 +35,46 @@ class ViewController: UIViewController {
         // 데이터 베이스 연결
         core.CreateDB()
         
-       // 현재 시간 정보를 가져옴
-       core.GetTodayInfo(dayinfo: Param)
+        // 환경 정보 가져오기
+        core.GetGetConfigParam(info: Param)
         
-       // 달력 보여주기
+       // 현재 시간 또는 지정된 시간 정보를 가져옴
+        print(Param.bSetCurTime)
+        if(Param.bSetCurTime == "0"){
+            core.GetTodayInfo(dayinfo: Param)
+            
+        }
+        else{
+            Param.bSetCurTime = "0"
+            core.UpDateConfigParam(info: Param)
+        }
+        
+        // 기간 주기 설정이 자동 일경우 평균값을 계산하여 갱신한다.
+        // 입력된 데이터가 2개보다 작을 경우에는 디비에 설정된 값을 그대로 가져다 쓴다.
+        if(Param.AutoCal == "1"){
+            Param.Term = core.GetAvrTerm()
+            Param.Cycle = core.GetAvrCycle()
+            core.UpDateConfigParam(info: Param)
+        }
+        
+       // 달력 디스플레이
        CalendarDisplay()
+    
     }
     
     // 이미지에 버튼 효과를 주기
     func CreateImg2Btn()
     {
-        // button event
         NextMonthBtn.isUserInteractionEnabled = true
         NextMonthBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector(("GotoNextMonth"))))
         BeforMonthBtn.isUserInteractionEnabled = true
         BeforMonthBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector(("GotoBeforeMonth"))))
     }
     
-    // 날짜 버튼에 대한 배열로 적용
+    // 날짜 버튼을 배열로 만들어 정렬하기
     func SetDayBtns()
     {
-        // 버튼의 아이디를 기준으로 사용할 버튼만 선별한다.
+        // 버튼 아이디를 기준으로 날짜 버튼 저장
         for v : AnyObject in self.view.subviews{
             if v is UIButton{
                 let s : String = (v.restorationIdentifier) ?? ""
@@ -68,7 +87,7 @@ class ViewController: UIViewController {
             }
         }
         
-        // 아이디에 맞추어 재정렬
+        // 아이디 기준으로 버튼 정렬
         let Temp = DayBtns
         for i in Temp{
             let s : String = (i.restorationIdentifier) ?? ""
@@ -105,16 +124,15 @@ class ViewController: UIViewController {
         // 현재 달의 시작 위치
         let firstIndex = core.GetFirstDay(info: Param)
         
+        // 사랑일 배경색을 파란색으로 변경
         for i in result{
-            if i.year == Param.CurYear && i.month == Param.CurMonth{
-                let Day : Int = Int(i.day)!
-                DayBtns[Day+firstIndex - 2].backgroundColor = UIColor.blue
-            }
-            else{
-                
+            let subString = i.loveDay.components(separatedBy: "-")
+            if subString[0] == Param.CurYear && subString[1] == Param.CurMonth{
+                let Day : Int = Int(subString[2])!
+                let img : UIImage = UIImage(named : "heartStk@1")!
+                DayBtns[Day+firstIndex - 2].setBackgroundImage(img, for: UIControl.State.normal)
             }
         }
-        
     }
     
     // 생리일 디스플레이
@@ -127,15 +145,35 @@ class ViewController: UIViewController {
         // 현재 선택된 달의 시작일 위치를 가져옴.
         let firstIndex = core.GetFirstDay(info: Param)
         
-        // 가져온 디비 내용에서 현재 년도와 달에 디스플레이할 날짜가 있을 경우
-        // 버튼의 배경색을 노란색으로 변경해준다.
-        for i in result{
-            print(i.startDay + " " + i.endDay )
-            let subString = i.startDay.components(separatedBy: "-")
-            if subString[0] == Param.CurYear{
-                if subString[1] == Param.CurMonth{
-                    let Day : Int = Int(subString[2])!
-                    DayBtns[Day+firstIndex - 2].backgroundColor = UIColor.yellow
+        // 선택된 달을 기준으로 시작일과 마지막일을 기준으로 생리 정보를 디스플레이 한다.
+        for i in result {
+            let startDay = i.startDay.components(separatedBy: "-")
+            let endDay = i.endDay.components(separatedBy: "-")
+            // 시작일이 선택된 달에 포함이 되는 경우
+            print(i.startDay + " ~ " + i.endDay)
+            if(startDay[0] == Param.CurYear && startDay[1] == Param.CurMonth){
+                // 시작일과 마지막일 간의 사이 간격을 구하가.
+                let days = core.GetIntervalDays(startDay: i.startDay, endDay: i.endDay)
+                let start = Int(startDay[2])! + firstIndex - 2
+                let end = start + days
+                for k in start...end{
+                    if(k >= 0 && k < DayBtns.count){
+                        //DayBtns[k].backgroundColor = UIColor.yellow
+                        DayBtns[k].setTitleColor(.red, for:.normal)
+                    }
+                }
+            }
+            // 마지막일이 선택된 달에 포함이 되는 경우
+            if(endDay[0] == Param.CurYear && endDay[1] == Param.CurMonth){
+                // 시작일과 마지막일 간의 사이 간격을 구하가.
+                let days = core.GetIntervalDays(startDay: i.startDay, endDay: i.endDay)
+                let start = Int(endDay[2])! + firstIndex - 2 - days
+                let end = Int(endDay[2])! + firstIndex - 2
+                for k in start...end{
+                    if(k >= 0 && k < DayBtns.count){
+                        //DayBtns[k].backgroundColor = UIColor.yellow
+                        DayBtns[k].setTitleColor(.red, for:.normal)
+                    }
                 }
             }
         }
@@ -153,31 +191,111 @@ class ViewController: UIViewController {
         
         // 버튼 아이디에 맞춰 글자, 배경을 설정한다.
         for v : UIButton in DayBtns{
+            // 초기화
+            let img : UIImage? = nil
+            v.backgroundColor = nil
+            v.setBackgroundImage(img, for: UIControl.State.normal)
+            v.setTitleColor(UIColor.black, for: UIControl.State.normal)
+            
+            // 텍스트 생성
             let pos = (v.restorationIdentifier) ?? ""
             var Index : Int = Int(pos)!
             Index += 1
             if(Index >= firstIndex && Index < firstIndex + NumDays){
                 let DayString = String(Index - firstIndex + 1)
-                v.setTitleColor(UIColor.black, for: UIControl.State.normal)
                 v.setTitle(DayString, for: UIControl.State.normal)
-                v.backgroundColor = nil
             }
             else{
                 let DayString = ""
-                v.setTitleColor(UIColor.black, for: UIControl.State.normal)
                 v.setTitle(DayString, for: UIControl.State.normal)
-                v.backgroundColor = nil
             }
         }
         
-        // 현재 선택된 날에 대한 디스플레이
-        MarkCurDay()
+       
+        // 사랑일 디스플레이
+        OnDisplayLoveDay()
         
         // 생리일 디스플레이.
         OnDisplayTheDay()
         
-        // 사랑일 디스플레이
-        OnDisplayLoveDay()
+        // 예정일 디스플레이
+        PreTheDayDisplay()
+        
+        // 현재 선택된 날에 대한 디스플레이
+        MarkCurDay()
+        
+        
+    }
+    
+    func PreTheDayDisplay()
+    {
+        var preTheDay : [String] = []
+        preTheDay = core.GetPreTheDay(info: Param)
+        if preTheDay.count == 2{
+            let firstIndex = core.GetFirstDay(info: Param)
+            let NumDays = core.GetNumDays(info: Param)
+            
+            let PreStart = preTheDay[0].components(separatedBy: "-")
+            let PreEnd = preTheDay[1].components(separatedBy: "-")
+            
+            var start : Int = 0
+            var end : Int = 0
+            
+            var dist = core.GetIntervalDays(startDay: preTheDay[0], endDay: preTheDay[1])
+            if PreStart[0] == Param.CurYear && PreStart[1] == Param.CurMonth{
+                start = Int(PreStart[2])! + firstIndex - 2
+                end = start + dist
+                for k in start...end{
+                    if k >= firstIndex && k <= firstIndex + NumDays{
+                         DayBtns[k].setTitleColor(.orange, for:.normal)
+                    }
+                }
+            }
+            
+            if PreEnd[0] == Param.CurYear && PreEnd[1] == Param.CurMonth{
+                end = Int(PreEnd[2])! + firstIndex - 2
+                start = end - dist
+                for k in start...end{
+                    if k >= firstIndex - 1 && k <= firstIndex + NumDays{
+                        DayBtns[k].setTitleColor(.orange, for:.normal)
+                    }
+                }
+            }
+        }
+        
+        // 가임기...
+        var PregDay : [String] = []
+        PregDay = core.GetPregDay(info: Param)
+        if PregDay.count == 2{
+            let firstIndex = core.GetFirstDay(info: Param)
+            let NumDays = core.GetNumDays(info: Param)
+            
+            let PregStart = PregDay[0].components(separatedBy: "-")
+            let PregEnd = PregDay[1].components(separatedBy: "-")
+            
+            var start : Int = 0
+            var end : Int = 0
+            var dist = core.GetIntervalDays(startDay: PregDay[0], endDay: PregDay[1])
+            if PregStart[0] == Param.CurYear && PregStart[1] == Param.CurMonth{
+                start = Int(PregStart[2])! + firstIndex - 2
+                end = start + dist
+                for k in start...end{
+                    if k >= firstIndex && k <= firstIndex + NumDays{
+                        DayBtns[k].setTitleColor(.purple, for:.normal)
+                    }
+                }
+            }
+            
+            if PregEnd[0] == Param.CurYear && PregEnd[1] == Param.CurMonth{
+                end = Int(PregEnd[2])! + firstIndex - 2
+                start = end - dist
+                for k in start...end{
+                    if k >= firstIndex - 1 && k <= firstIndex + NumDays{
+                        DayBtns[k].setTitleColor(.purple, for:.normal)
+                    }
+                }
+            }
+        }
     }
     
     // 현재 설정된 날에 대한 디스플레이
@@ -192,13 +310,13 @@ class ViewController: UIViewController {
         // 디스플레이하기 전에는 보이지 않게 하도록 설정
         SelectTheDayBtn.isHidden = true
         
-        
         for v : UIButton in DayBtns{
             let pos = (v.restorationIdentifier) ?? ""
             var Index : Int = Int(pos)!
             Index += 1
             if(Index == nDayIndex && Index < firstIndex + dayNums){
-                v.backgroundColor = UIColor.red
+                //v.backgroundColor = UIColor.red
+                v.setTitleColor(.blue, for: .normal)
                 
                 // 선택될 날이 현재 달 유효한 날짜이면 수정, 추가 버튼이 보여지도록 한다.
                 SelectTheDayBtn.isHidden = false
@@ -222,6 +340,11 @@ class ViewController: UIViewController {
             Param.CurDay = String(index - firstIndex + 1)
             CalendarDisplay()
         }
+    }
+    
+    @IBAction func GoToHome(_ sender: Any) {
+        core.GetTodayInfo(dayinfo: Param)
+        CalendarDisplay()
     }
 }
 

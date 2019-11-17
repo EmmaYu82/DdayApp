@@ -11,11 +11,13 @@ import Foundation
 // config Data Param
 class ConfigDataParam
 {
+    var bSetCurTime : String  = "0"
     var CurYear : String = "2019"
     var CurMonth : String = "11"
     var CurDay : String = "9"
-    var Term : String = "4"
+    var Term : String = "10"
     var Cycle : String = "28"
+    var AutoCal : String = "0"
 }
 
 class TheDayInfo
@@ -28,6 +30,7 @@ class TheDayInfo
 
 class TheLoveDayInfo
 {
+    var loveDay : String = ""
     var year : String = ""
     var month : String = ""
     var day : String = ""
@@ -40,17 +43,17 @@ class DBClass
     var ConfigDBPath : String = ""
     let configParam = ConfigDataParam()
     
-    // Create DB
+    // 데이터 베이스 생성
     func CreateDB(){
         let filemgr = FileManager.default
         let dirPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let docsDir = dirPaths[0] as String
         
-        TheDayDBPath = docsDir.appending("/TheDayDB001.db")
-        LoveDayDBPath = docsDir.appending("/LoveDayDB001.db")
-        ConfigDBPath = docsDir.appending("/ConfigDB005.db")
+        TheDayDBPath = docsDir.appending("/TheDayDB009.db")
+        LoveDayDBPath = docsDir.appending("/LoveDayDB002.db")
+        ConfigDBPath = docsDir.appending("/ConfigDB008.db")
         
-        // The Day DB
+        // 생리
         if !filemgr.fileExists(atPath: TheDayDBPath) {
             let contactDB = FMDatabase(path: TheDayDBPath)
             if contactDB.open() {
@@ -64,11 +67,11 @@ class DBClass
             }
         }
         
-        // Love Day DB
+        // 사랑일
         if !filemgr.fileExists(atPath: LoveDayDBPath) {
             let contactDB = FMDatabase(path: LoveDayDBPath)
             if contactDB.open() {
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, curyear TEXT, curmonth TEXT, curday TEXT)"
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, LOVEDAY TEXT)"
                 if !contactDB.executeStatements(sql_stmt) {
                     print("Error \(contactDB.lastErrorMessage())")
                 }
@@ -78,11 +81,11 @@ class DBClass
             }
         }
         
-        // Config DB
+        // 환경 설정 정보
         if !filemgr.fileExists(atPath: ConfigDBPath) {
             let contactDB = FMDatabase(path: ConfigDBPath)
             if contactDB.open() {
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, CONFIG TEXT, TERM TEXT, CYCLE TEXT, CURYEAR TEXT, CURMONTH TEXT, CURDAY TEXT)"
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, CONFIG TEXT, TERM TEXT, CYCLE TEXT, CURYEAR TEXT, CURMONTH TEXT, CURDAY TEXT, CURTIME TEXT, AUTOCAL TEXT)"
                 if !contactDB.executeStatements(sql_stmt) {
                     print("Error \(contactDB.lastErrorMessage())")
                 }
@@ -96,13 +99,32 @@ class DBClass
     }
     
     
-    // set start day
+    // 생리 정보 저장하기
     func SetStartDay(startDay : String, endDay : String, term : String, cycle : String){
         let contactDB = FMDatabase(path: TheDayDBPath)
         if contactDB.open(){
             let insertSQL = "INSERT INTO CONTACTS (start, end, term, cycle) VALUES ('\(startDay)', '\(endDay)', '\(term)', '\(cycle)')"
             
             let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [0])
+            if !result {
+                print("fail")
+            } else {
+                print("success")
+            }
+        }
+        else{
+            print("fail")
+        }
+    }
+    
+    
+    // 생리 정보 제거
+    func DeleteTheDay(theDay : TheDayInfo){
+        let contactDB = FMDatabase(path: TheDayDBPath)
+        if contactDB.open() {
+            let insertSQL = "DELETE FROM CONTACTS WHERE ( start = '\(theDay.startDay)')"
+            
+            let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
             if !result {
                 print("fail")
                 //status.text = "Failed to add contact"
@@ -114,16 +136,85 @@ class DBClass
                 //address.text = ""
                 //phone.text = ""
             }
-            
-           // print("seccuss")
-        }
-        else{
-            print("fail")
+            contactDB.close()
+        } else {
+            print("Error \(contactDB.lastErrorMessage())")
         }
     }
     
+    // 선택된 사랑일 제거하기
+    func DeleteLoveDay(loveDay : String){
+        let contactDB = FMDatabase(path: LoveDayDBPath)
+        if contactDB.open() {
+            let insertSQL = "DELETE FROM CONTACTS WHERE ( loveDay = '\(loveDay)')"
+            
+            let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
+            if !result {
+                print("fail")
+                //status.text = "Failed to add contact"
+                //print("Error \(contactDB.lastErrorMessage())")
+            } else {
+                print("success")
+                //status.text = "Contact Added"
+                //name.text = ""
+                //address.text = ""
+                //phone.text = ""
+            }
+            contactDB.close()
+        } else {
+            print("Error \(contactDB.lastErrorMessage())")
+        }
+    }
     
-    // set love day
+    // 선택된 사랑일 제거하기
+    func DeleteLoveDay(info : ConfigDataParam){
+         let contactDB = FMDatabase(path: LoveDayDBPath)
+        if contactDB.open() {
+            let insertSQL = "DELETE FROM CONTACTS WHERE ( curday = '\(info.CurDay)', curmonth = '\(info.CurMonth)')"
+            
+            let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
+            if !result {
+                print("fail")
+                //status.text = "Failed to add contact"
+                //print("Error \(contactDB.lastErrorMessage())")
+            } else {
+                print("success")
+                //status.text = "Contact Added"
+                //name.text = ""
+                //address.text = ""
+                //phone.text = ""
+            }
+            contactDB.close()
+        } else {
+            print("Error \(contactDB.lastErrorMessage())")
+        }
+    }
+    
+    // 사랑일 저장하기
+    func SetLoveDay(loveDay : String){
+        let contactDB = FMDatabase(path: LoveDayDBPath)
+        if contactDB.open() {
+            let insertSQL = "INSERT INTO CONTACTS (loveDay) VALUES ('\(loveDay)')"
+            
+            let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
+            if !result {
+                print("fail")
+                //status.text = "Failed to add contact"
+                //print("Error \(contactDB.lastErrorMessage())")
+            } else {
+                print("success")
+                //status.text = "Contact Added"
+                //name.text = ""
+                //address.text = ""
+                //phone.text = ""
+            }
+            contactDB.close()
+        } else {
+            print("Error \(contactDB.lastErrorMessage())")
+        }
+    }
+    
+    // 사랑일 저장하기
     func SetLoveDay(info : ConfigDataParam){
         let contactDB = FMDatabase(path: LoveDayDBPath)
         if contactDB.open() {
@@ -147,19 +238,14 @@ class DBClass
         }
     }
     
-    // Save Config DB
+    // 환경 설정 정보 생성
     func SaveConFigDBData(info : ConfigDataParam){
         let contactDB = FMDatabase(path: ConfigDBPath)
         
         let config : String = "config"
-        let term : String = info.Term
-        let cycle :String = info.Cycle
-        let curYear : String = info.CurYear
-        let CurMonth : String = info.CurMonth
-        let CurDay : String = info.CurDay
         
         if contactDB.open() {
-            let insertSQL = "INSERT INTO CONTACTS (config, term, cycle, curyear, curmonth, curday) VALUES ('\(config)', '\(term)', '\(cycle)', '\(curYear)','\(CurMonth)','\(CurDay)')"
+            let insertSQL = "INSERT INTO CONTACTS (config, term, cycle, curyear, curmonth, curday, curtime, autocal) VALUES ('\(config)', '\(info.Term)', '\(info.Cycle)', '\(info.CurYear)','\(info.CurMonth)','\(info.CurDay)', '\(info.bSetCurTime)', '\(info.AutoCal)')"
             
             let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
             
@@ -181,19 +267,13 @@ class DBClass
         }
     }
     
-    // UpDate Config DB
+    // 환경 설정 정보 업데이트
     func UpDateConfigDBData(info : ConfigDataParam){
         let contactDB = FMDatabase(path: ConfigDBPath)
-        
         let config : String = "config"
-        let term : String = info.Term
-        let cycle :String = info.Cycle
-        let curYear : String = info.CurYear
-        let CurMonth : String = info.CurMonth
-        let CurDay : String = info.CurDay
-        
+
         if contactDB.open() {
-            let insertSQL = "UPDATE CONTACTS SET config = '\(config)', term = '\(term)', cycle ='\(cycle)', curyear = '\(curYear)', curmonth = '\(CurMonth)', curday = '\(CurDay)' WHERE ?"
+            let insertSQL = "UPDATE CONTACTS SET config = '\(config)', term = '\(info.Term)', cycle ='\(info.Cycle)', curyear = '\(info.CurYear)', curmonth = '\(info.CurMonth)', curday = '\(info.CurDay)', curtime = '\(info.bSetCurTime)', autocal = '\(info.AutoCal)' WHERE ?"
             
             let result = contactDB.executeUpdate(insertSQL,withArgumentsIn: [1])
             
@@ -208,20 +288,49 @@ class DBClass
         }
     }
     
+    
+    // 생리 일정 정보 업데이트
+    func UpDateTheDayDBData(info : TheDayInfo, filt : Int){
+        let contactDB = FMDatabase(path: TheDayDBPath)
+        
+        if contactDB.open() {
+            var insertSQL : String = ""
+            if filt == 0{
+                insertSQL = "UPDATE CONTACTS SET start = '\(info.startDay)', end = '\(info.endDay)', term ='\(info.term)', cycle = '\(info.cycle)' WHERE start = '\(info.startDay)'"
+            }
+            else{
+                insertSQL = "UPDATE CONTACTS SET start = '\(info.startDay)', end = '\(info.endDay)', term ='\(info.term)', cycle = '\(info.cycle)' WHERE end = '\(info.endDay)'"
+            }
+            
+            let result = contactDB.executeUpdate(insertSQL,withArgumentsIn: [1])
+            
+            if (result == false) {
+                print("fail")
+            } else {
+                print("success")
+            }
+            contactDB.close()
+        } else {
+            print("Error \(contactDB.lastErrorMessage())")
+        }
+    }
+    
+    
+    // 사랑일 정보 가져오기
     func GetLoveDayDB()->Array<TheLoveDayInfo>{
         var resultData : [TheLoveDayInfo] = []
         let contactDB = FMDatabase(path: LoveDayDBPath)
         if contactDB.open() {
-            let querySQL = "SELECT curyear, curmonth, curday FROM CONTACTS ORDER BY curyear"
+            let querySQL = "SELECT LOVEDAY FROM CONTACTS ORDER BY LOVEDAY"
             let result: FMResultSet? = contactDB.executeQuery(querySQL, withArgumentsIn: [])
             
             if let rs = result{
                 
                 while rs.next(){
-                    var select = TheLoveDayInfo()
-                    select.year = rs.string(forColumn: "curyear")!
-                    select.month = rs.string(forColumn: "curmonth")!
-                    select.day = rs.string(forColumn: "curday")!
+                    let select = TheLoveDayInfo()
+                    select.loveDay = rs.string(forColumn: "loveday")!
+                    //select.month = rs.string(forColumn: "curmonth")!
+                    //select.day = rs.string(forColumn: "curday")!
                     resultData.append(select)
                 }
                 
@@ -236,7 +345,7 @@ class DBClass
         return resultData
     }
     
-    
+    // 생리 정보 가져오기
     func GetTheDayDB()->Array<TheDayInfo>{
         var resultData : [TheDayInfo] = []
         let contactDB = FMDatabase(path: TheDayDBPath)
@@ -246,7 +355,7 @@ class DBClass
             if let rs = result{
                 
                 while rs.next(){
-                    var select = TheDayInfo()
+                    let select = TheDayInfo()
                     select.startDay = rs.string(forColumn: "start")!
                     select.endDay = rs.string(forColumn: "end")!
                     select.term = rs.string(forColumn: "term")!
@@ -268,12 +377,12 @@ class DBClass
         return resultData
     }
     
-    // Get Config Param
+    // 환경 설정 정보 저장하기
     func SetParameters(info : ConfigDataParam){
         let contactDB = FMDatabase(path: ConfigDBPath)
         
         if contactDB.open() {
-            let querySQL = "SELECT term, cycle, curyear, curmonth, curday  FROM CONTACTS WHERE config = config"
+            let querySQL = "SELECT term, cycle, curyear, curmonth, curday, curtime, autocal FROM CONTACTS WHERE config = config"
             let result: FMResultSet? = contactDB.executeQuery(querySQL, withArgumentsIn: [])
             if result?.next() == true {
                 info.Term = (result?.string(forColumn: "term"))!
@@ -281,6 +390,8 @@ class DBClass
                 info.CurYear = (result?.string(forColumn: "curyear"))!
                 info.CurMonth = (result?.string(forColumn: "curmonth"))!
                 info.CurDay = (result?.string(forColumn: "curday"))!
+                info.bSetCurTime = (result?.string(forColumn: "curtime"))!
+                info.AutoCal = (result?.string(forColumn: "autocal"))!
             } else {
                 print("fail")
             }

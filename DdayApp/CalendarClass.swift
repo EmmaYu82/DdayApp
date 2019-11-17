@@ -115,9 +115,22 @@ class CalendarClass{
         return info.CurYear + "-" + info.CurMonth + "-" + info.CurDay;
     }
     
+    func GetIntervalDays(StartDay : String, EndDay : String)->Int
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let startDate = formatter.date(from:StartDay)!
+        let endDate = formatter.date(from:EndDay)!
+        let interval = endDate.timeIntervalSince(startDate)
+        let days = Int(interval / 86400)
+        
+        return days
+    }
+    
+    
     func GetNewDay(info : ConfigDataParam)->String{
         var newDay = info
-        let dist = Int(info.Cycle)!
+        let dist = Int(info.Term)!
         let toDay = Int(info.CurDay)!
         let NumDay : Int = GetNumDays(strYear: info.CurYear, strMonth: info.CurMonth)
         
@@ -214,4 +227,25 @@ class CalendarClass{
         info.CurYear = String(nYear)
         info.CurMonth = String(nMonth)
     }
+    
+    func GetNextDay(start : String, after : Int)->String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let startDate = formatter.date(from:start)!
+        let calendar = Calendar.current
+        let day = DateComponents(day: after)
+        if let d100 = calendar.date(byAdding: day, to: startDate)
+        {
+            return formatter.string(from: d100)
+            //print(formatter.string(from: d100))
+        }
+       
+        return "0"
+    }
+    
+    func GetNextDay(start : String, after : String)->String{
+       let nAfter = Int(after)!
+       return GetNextDay(start: start, after: nAfter)
+    }
+    
 }
