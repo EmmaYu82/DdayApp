@@ -347,4 +347,3 @@ class ViewController: UIViewController {
         CalendarDisplay()
     }
 }
-
