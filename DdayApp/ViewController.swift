@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var BeforMonthBtn: UIImageView!
     @IBOutlet weak var TimeInfo: UILabel!
     @IBOutlet weak var SelectTheDayBtn: UIButton!
+
     
     // 날자 버튼 배열
     var DayBtns : [UIButton] = []
@@ -241,7 +242,7 @@ class ViewController: UIViewController {
             var start : Int = 0
             var end : Int = 0
             
-            var dist = core.GetIntervalDays(startDay: preTheDay[0], endDay: preTheDay[1])
+            let dist = core.GetIntervalDays(startDay: preTheDay[0], endDay: preTheDay[1])
             if PreStart[0] == Param.CurYear && PreStart[1] == Param.CurMonth{
                 start = Int(PreStart[2])! + firstIndex - 2
                 end = start + dist
@@ -275,7 +276,7 @@ class ViewController: UIViewController {
             
             var start : Int = 0
             var end : Int = 0
-            var dist = core.GetIntervalDays(startDay: PregDay[0], endDay: PregDay[1])
+            let dist = core.GetIntervalDays(startDay: PregDay[0], endDay: PregDay[1])
             if PregStart[0] == Param.CurYear && PregStart[1] == Param.CurMonth{
                 start = Int(PregStart[2])! + firstIndex - 2
                 end = start + dist
