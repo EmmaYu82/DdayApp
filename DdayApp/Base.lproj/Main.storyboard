@@ -1213,56 +1213,23 @@
                                     <constraint firstAttribute="width" constant="320" id="Tjm-w1-zGy"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbI-Zh-FcS" userLabel="주기보기 &gt;">
-                                <rect key="frame" x="312" y="122.5" width="30" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="wgw-e9-vs0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="&gt;">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="iwc-S2-lDn" kind="show" id="5cq-Sd-F6p"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQF-6a-i2c" userLabel="주기계산 &gt;">
-                                <rect key="frame" x="312" y="90.5" width="30" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="ItU-pf-zLz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="&gt;">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Icb-Qa-FXa" kind="show" id="RtH-EV-ZX5"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="W39-Il-Ovr">
                                 <rect key="frame" x="0.0" y="157.5" width="414" height="654.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="2" indentationWidth="12" reuseIdentifier="setcell" textLabel="b3z-vP-h4L" detailTextLabel="0uo-vH-2Sk" style="IBUITableViewCellStyleValue1" id="fmv-mJ-dWf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationLevel="2" indentationWidth="12" reuseIdentifier="setcell" textLabel="b3z-vP-h4L" style="IBUITableViewCellStyleDefault" id="fmv-mJ-dWf">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fmv-mJ-dWf" id="UgR-2k-po6">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b3z-vP-h4L">
-                                                    <rect key="frame" x="34" y="12" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="34" y="0.0" width="342" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0uo-vH-2Sk">
-                                                    <rect key="frame" x="384.5" y="14" width="9.5" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1280,18 +1247,14 @@
                             <constraint firstItem="j5m-Lr-DkT" firstAttribute="centerX" secondItem="kSf-Gv-q96" secondAttribute="centerX" id="5D4-pp-AX2"/>
                             <constraint firstItem="iXF-zQ-DHv" firstAttribute="bottom" secondItem="CNZ-0c-Jhu" secondAttribute="bottom" id="85N-dY-NXu"/>
                             <constraint firstItem="j5m-Lr-DkT" firstAttribute="top" secondItem="SXq-vJ-iln" secondAttribute="bottom" constant="290" id="8Wo-hA-fkh"/>
-                            <constraint firstAttribute="trailing" secondItem="XQF-6a-i2c" secondAttribute="trailing" constant="72" id="9cJ-L0-n6Z"/>
                             <constraint firstItem="j5m-Lr-DkT" firstAttribute="centerY" secondItem="kSf-Gv-q96" secondAttribute="centerY" id="HZA-ep-g7D"/>
                             <constraint firstItem="iXF-zQ-DHv" firstAttribute="trailing" secondItem="W39-Il-Ovr" secondAttribute="trailing" id="J4I-zD-cu6"/>
                             <constraint firstItem="CNZ-0c-Jhu" firstAttribute="centerX" secondItem="kSf-Gv-q96" secondAttribute="centerX" id="LXR-CB-srh"/>
                             <constraint firstItem="ayv-Tw-ACa" firstAttribute="centerX" secondItem="kSf-Gv-q96" secondAttribute="centerX" id="Q7P-un-7Vn"/>
-                            <constraint firstAttribute="trailing" secondItem="WbI-Zh-FcS" secondAttribute="trailing" constant="72" id="V2D-sV-56m"/>
-                            <constraint firstItem="WbI-Zh-FcS" firstAttribute="top" secondItem="XQF-6a-i2c" secondAttribute="bottom" constant="10" id="VaP-yJ-Y54"/>
                             <constraint firstItem="SXq-vJ-iln" firstAttribute="top" secondItem="PpT-3F-Dfm" secondAttribute="bottom" constant="10" id="a3C-Aq-kES"/>
                             <constraint firstItem="PpT-3F-Dfm" firstAttribute="leading" secondItem="iXF-zQ-DHv" secondAttribute="leading" constant="22" id="aoJ-dA-HvD"/>
                             <constraint firstItem="SXq-vJ-iln" firstAttribute="centerX" secondItem="kSf-Gv-q96" secondAttribute="centerX" id="daO-Af-yD5"/>
                             <constraint firstItem="W39-Il-Ovr" firstAttribute="top" secondItem="SXq-vJ-iln" secondAttribute="bottom" id="mUC-R4-jHt"/>
-                            <constraint firstItem="SXq-vJ-iln" firstAttribute="top" secondItem="WbI-Zh-FcS" secondAttribute="bottom" constant="10" id="qvI-dd-Xn5"/>
                             <constraint firstItem="W39-Il-Ovr" firstAttribute="leading" secondItem="iXF-zQ-DHv" secondAttribute="leading" id="tuN-Zh-Kk5"/>
                             <constraint firstItem="SXq-vJ-iln" firstAttribute="top" secondItem="ayv-Tw-ACa" secondAttribute="bottom" constant="10" id="weh-Kt-0a5"/>
                             <constraint firstItem="CNZ-0c-Jhu" firstAttribute="top" secondItem="W39-Il-Ovr" secondAttribute="bottom" id="yVo-4H-PbY"/>
