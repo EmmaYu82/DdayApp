@@ -13,7 +13,7 @@ class SetTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var tableView: UITableView!
     let cellIdentifier: String = "setcell"
     
-    let set1: [String] = ["주기", "알람", "비밀번호", "공유", "화면"]
+    let set1: [String] = ["나의주기", "주기설정", "알람설정", "비밀번호", "공유하기", "화면설정"]
     let set2: [String] = ["광고없애기", "문의하기"]
 
     override func viewDidLoad() {
@@ -46,5 +46,7 @@ class SetTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         setcell.textLabel?.text = text
         return setcell
     }
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "개인":"기타"
+    }
 }
