@@ -14,7 +14,7 @@ class SetTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     let cellIdentifier: String = "setcell"
     
     let set1: [String] = ["나의주기", "주기설정", "알람설정", "비밀번호", "공유하기", "화면설정"]
-    let set2: [String] = ["광고없애기", "문의하기"]
+    let set2: [String] = ["광고없애기", "문의하기", "버전정보"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
