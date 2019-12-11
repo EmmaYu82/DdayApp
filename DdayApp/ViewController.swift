@@ -195,7 +195,7 @@ class ViewController: UIViewController {
             // 초기화
             let img : UIImage? = nil
             v.backgroundColor = nil
-            v.setBackgroundImage(img, for: UIControl.State.normal)
+            //v.setBackgroundImage(img, for: UIControl.State.normal)
             v.setTitleColor(UIColor.black, for: UIControl.State.normal)
             
             // 텍스트 생성
