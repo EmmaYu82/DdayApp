@@ -21,6 +21,7 @@ class SetTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -38,7 +39,6 @@ class SetTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let setcell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
         let text: String = indexPath.section == 0 ? set1[indexPath.row] : set2[indexPath.row]
@@ -48,5 +48,19 @@ class SetTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section == 0 ? "개인":"기타"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            self.performSegue(withIdentifier: "periodlist", sender: nil)
+        }
+        else if indexPath.section == 0 && indexPath.row == 1 {
+            self.performSegue(withIdentifier: "periodcal", sender: nil)
+        }
+        else {
+            self.performSegue(withIdentifier: "rest", sender: nil)
+        }
+        return
+
     }
 }
