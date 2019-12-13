@@ -57,6 +57,30 @@ class SetTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         else if indexPath.section == 0 && indexPath.row == 1 {
             self.performSegue(withIdentifier: "periodcal", sender: nil)
         }
+        else if indexPath.section == 0 && indexPath.row == 2 {
+            self.performSegue(withIdentifier: "alarmset", sender: nil)
+        }
+        else if indexPath.section == 0 && indexPath.row == 3 {
+            self.performSegue(withIdentifier: "setpin", sender: nil)
+        }
+        else if indexPath.section == 0 && indexPath.row == 4 {
+            self.performSegue(withIdentifier: "setshare", sender: nil)
+        }
+        else if indexPath.section == 0 && indexPath.row == 5 {
+            self.performSegue(withIdentifier: "setbg", sender: nil)
+        }
+        else if indexPath.section == 1 && indexPath.row == 0 {
+            self.performSegue(withIdentifier: "deletead", sender: nil)
+        }
+        else if indexPath.section == 1 && indexPath.row == 1 {
+            self.performSegue(withIdentifier: "contact", sender: nil)
+        }
+        else if indexPath.section == 1 && indexPath.row == 2 {
+            self.performSegue(withIdentifier: "appinfo", sender: nil)
+        }
+        else if indexPath.section == 1 && indexPath.row == 3 {
+            self.performSegue(withIdentifier: "versioninfo", sender: nil)
+        }
         else {
             self.performSegue(withIdentifier: "rest", sender: nil)
         }
