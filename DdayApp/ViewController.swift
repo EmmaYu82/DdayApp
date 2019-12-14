@@ -9,73 +9,49 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var NextMonthBtn: UIImageView!
-    @IBOutlet weak var BeforMonthBtn: UIImageView!
-    @IBOutlet weak var TimeInfo: UILabel!
-    @IBOutlet weak var SelectTheDayBtn: UIButton!
+    @IBOutlet weak var NextMonthBtn: UIImageView!     // 다음 달 선택
+    @IBOutlet weak var BeforMonthBtn: UIImageView!    // 이전 달 선택
+    @IBOutlet weak var TimeInfo: UILabel!             // 달력 제목
+    @IBOutlet weak var SelectTheDayBtn: UIButton!     // 달력 정보 업데이트
 
+    var DayBtns : [UIButton] = []  // 날짜 버튼 배열
+    let core = Core()              // 주처리 클래스
+    var Param = ConfigDataParam()  // 환경 설정 파라미터
     
-    // 날자 버튼 배열
-    var DayBtns : [UIButton] = []
-    
-    // 주 처리 클래스
-    let core = Core()
-    
-    // 파라미터
-    var Param = ConfigDataParam()
-    
+    //////////////////////////////
+    /// 시작\
+    //////////////////////////////
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        // 이미지에 버튼 이벤트 효과 주기
-        CreateImg2Btn()
-        
-        // 날짜 버튼을 배열로 적용
-        SetDayBtns()
-        
-        // 데이터 베이스 연결
-        core.CreateDB()
-        
-        // 환경 정보 가져오기
-        core.GetGetConfigParam(info: Param)
-        
-       // 현재 시간 또는 지정된 시간 정보를 가져옴
-        print(Param.bSetCurTime)
-        if(Param.bSetCurTime == "0"){
-            core.GetTodayInfo(dayinfo: Param)
-            
-        }
-        else{
-            Param.bSetCurTime = "0"
-            core.UpDateConfigParam(info: Param)
-        }
-        
-        // 기간 주기 설정이 자동 일경우 평균값을 계산하여 갱신한다.
-        // 입력된 데이터가 2개보다 작을 경우에는 디비에 설정된 값을 그대로 가져다 쓴다.
-        if(Param.AutoCal == "1"){
-            Param.Term = core.GetAvrTerm()
-            Param.Cycle = core.GetAvrCycle()
-            core.UpDateConfigParam(info: Param)
-        }
-        
-       // 달력 디스플레이
-       CalendarDisplay()
-    
+        CreateImg2Btn()                         // 이미지에 버튼 이벤트 효과 주기
+        SetDayBtns()                            // 날짜 버튼을 배열로 저장
+        core.CreateDB()                         // 데이터 베이스 연결
+        core.GetGetConfigParam(info: Param)     // 환경 정보 가져오기
+        CalendarDisplay()                       // 달력 디스플레이
     }
     
-    // 이미지에 버튼 효과를 주기
+    /////////////////////////////////
+    // 이미지에 버튼 이벤트 만들기
+    /////////////////////////////////
     func CreateImg2Btn()
     {
+        // 다음 달 선택
         NextMonthBtn.isUserInteractionEnabled = true
         NextMonthBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector(("GotoNextMonth"))))
+        
+        // 이전 달 선택
         BeforMonthBtn.isUserInteractionEnabled = true
         BeforMonthBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector(("GotoBeforeMonth"))))
     }
     
-    // 날짜 버튼을 배열로 만들어 정렬하기
+    /////////////////////////////////////////////////////////////
+    // 날짜 버튼을 배열로 저장하여 사용하기
+    // 생성되는 버튼의 아이디를 참조하고, 날짜에 해당하는 버튼만 배열에 추가한다.
+    // 배열로 담긴 배열을 아이디를 기준으로 재정렬한다.
+    /////////////////////////////////////////////////////////////
     func SetDayBtns()
     {
-        // 버튼 아이디를 기준으로 날짜 버튼 저장
         for v : AnyObject in self.view.subviews{
             if v is UIButton{
                 let s : String = (v.restorationIdentifier) ?? ""
@@ -88,7 +64,6 @@ class ViewController: UIViewController {
             }
         }
         
-        // 아이디 기준으로 버튼 정렬
         let Temp = DayBtns
         for i in Temp{
             let s : String = (i.restorationIdentifier) ?? ""
@@ -97,35 +72,36 @@ class ViewController: UIViewController {
         }
     }
     
-    // 다음 달력을 선택했을 경우 시간 정보를 변경하고 달력을 다시 보여준다.
+    ///////////////////////////////////////////////
+    // 다음 달을 선택하였을 경우 환경 정보 및 달력 업데이트.
+    ///////////////////////////////////////////////
     @objc func GotoNextMonth()
     {
-        // 다음달로 변경했을 경우 처리..
-        // 12월 달의 경우 다음 달 선택했을 경우 년도를 바꿈.
         core.SetNextMonth(info : Param)
         CalendarDisplay()
     }
     
-    // 이전 달력을 선택했을 경우 시간 정보를 변경하고 달력을 다시 보여준다.
+    ////////////////////////////////////////////
+    // 이전 달을 선택하였을 경우 환경 정보 및 달력 업데이트
+    ////////////////////////////////////////////
     @objc func GotoBeforeMonth()
     {
-        // 이전달로 변경했을 경우 처리..
-        // 1월에서 변경될 경우 년도를 수정해준다.
         core.SetBeforeMonth(info : Param)
         CalendarDisplay()
     }
     
+    //////////////////////////////////////////////////////////
     // 사랑일 디스플레이
+    // 사랑일 정보를 로드하여 현재 디스플레이되는 달력에 해당하는 날이 있을 경우
+    // 해당 버튼을 업데이트.
+    //////////////////////////////////////////////////////////
     func OnDisplayLoveDay()
     {
-        // 디비를 통해 사랑일에 대한 정보를 배열로 가져온다.
         var result : [TheLoveDayInfo] = []
         result = core.GetLoveDayDB()
         
-        // 현재 달의 시작 위치
         let firstIndex = core.GetFirstDay(info: Param)
         
-        // 사랑일 배경색을 파란색으로 변경
         for i in result{
             let subString = i.loveDay.components(separatedBy: "-")
             if subString[0] == Param.CurYear && subString[1] == Param.CurMonth{
@@ -136,37 +112,36 @@ class ViewController: UIViewController {
         }
     }
     
+    /////////////////////////////////////////////////////
     // 생리일 디스플레이
+    // 데이터 베이스에서 얻어온 생리일 정보를 기준으로 현재 디스플레이되는
+    // 달력에 포함이 되는 날짜의 버튼을 업데이트.
+    // 시작일과 마지막일에 포함되는 날 모두 디스플레이
+    /////////////////////////////////////////////////////
     func OnDisplayTheDay()
     {
-        // 디비를 통해 생리일에 대한 정보를 배열로 가져온다.
         var result : [TheDayInfo] = []
         result = core.GetTheDayDB()
-        
-        // 현재 선택된 달의 시작일 위치를 가져옴.
         let firstIndex = core.GetFirstDay(info: Param)
-        
-        // 선택된 달을 기준으로 시작일과 마지막일을 기준으로 생리 정보를 디스플레이 한다.
         for i in result {
             let startDay = i.startDay.components(separatedBy: "-")
             let endDay = i.endDay.components(separatedBy: "-")
-            // 시작일이 선택된 달에 포함이 되는 경우
-            print(i.startDay + " ~ " + i.endDay)
+           
+            // 시작일을 기준으로 마지막일까지 버튼의 글자의 색을 변경
             if(startDay[0] == Param.CurYear && startDay[1] == Param.CurMonth){
-                // 시작일과 마지막일 간의 사이 간격을 구하가.
                 let days = core.GetIntervalDays(startDay: i.startDay, endDay: i.endDay)
                 let start = Int(startDay[2])! + firstIndex - 2
                 let end = start + days
                 for k in start...end{
                     if(k >= 0 && k < DayBtns.count){
-                        DayBtns[k].backgroundColor = UIColor.yellow
+                        //DayBtns[k].backgroundColor = UIColor.yellow
                         DayBtns[k].setTitleColor(.red, for:.normal)
                     }
                 }
             }
-            // 마지막일이 선택된 달에 포함이 되는 경우
+            
+            // 마지막일을 기준으로 시작일까지 버튼의 글자의 색을 변경
             if(endDay[0] == Param.CurYear && endDay[1] == Param.CurMonth){
-                // 시작일과 마지막일 간의 사이 간격을 구하가.
                 let days = core.GetIntervalDays(startDay: i.startDay, endDay: i.endDay)
                 let start = Int(endDay[2])! + firstIndex - 2 - days
                 let end = Int(endDay[2])! + firstIndex - 2
@@ -180,25 +155,29 @@ class ViewController: UIViewController {
         }
     }
     
+    /////////////////////////////////////////////////////////
     // 달력 디스플레이
+    // 선택된 달에 대한 달력을 업데이트하고, 각 버튼의 속성을 초기화한다.
+    // 업데이트 이후, 사랑일, 생리일, 사랑일, 예정일 등의 정보를 업데이트한다.
+    /////////////////////////////////////////////////////////
     func CalendarDisplay()
     {
-        // 타이틀 스트링 가져오기.
+        // 달력의 제목 타이틀을 변경
         TimeInfo.text = core.GetCalendarText(info : Param)
         
-        // 선택된 달의 시작일과 날의 수를 계산한다.
+        
         let firstIndex : Int = core.GetFirstDay(info: Param)
         let NumDays = core.GetNumDays(info: Param)
         
-        // 버튼 아이디에 맞춰 글자, 배경을 설정한다.
+        // 버튼의 모든 속성을 변경하고,
+        // 현재 디스플레이되는 달의 날에 해당하는 버튼의 글자를 변경하여
+        // 디스플레이함.
         for v : UIButton in DayBtns{
-            // 초기화
             let img : UIImage? = nil
             v.backgroundColor = nil
-            //v.setBackgroundImage(img, for: UIControl.State.normal)
+            v.setBackgroundImage(img, for: UIControl.State.normal)
             v.setTitleColor(UIColor.black, for: UIControl.State.normal)
-            
-            // 텍스트 생성
+        
             let pos = (v.restorationIdentifier) ?? ""
             var Index : Int = Int(pos)!
             Index += 1
@@ -213,21 +192,15 @@ class ViewController: UIViewController {
         }
         
        
-        // 사랑일 디스플레이
-        OnDisplayLoveDay()
-        
-        // 생리일 디스플레이.
-        OnDisplayTheDay()
-        
-        // 예정일 디스플레이
-        PreTheDayDisplay()
-        
-        // 현재 선택된 날에 대한 디스플레이
-        MarkCurDay()
-        
-        
+        OnDisplayLoveDay()    // 사랑일 업데이트
+        OnDisplayTheDay()     // 생리일 업데이트
+        PreTheDayDisplay()    // 예정일 업데이트
+        MarkCurDay()          // 현재 선택된 날에 대한 디스플레이
     }
     
+    /////////////////////////////////////
+    // 예정일에 대한 정보 업데이트
+    /////////////////////////////////////
     func PreTheDayDisplay()
     {
         var preTheDay : [String] = []
@@ -299,7 +272,11 @@ class ViewController: UIViewController {
         }
     }
     
-    // 현재 설정된 날에 대한 디스플레이
+    ///////////////////////////////
+    // 현재 선택된 날짜에 대한 업데이트
+    // 선택된 날이 현재 디스플레이되는 달력의 범위내에서 수정 및 추가
+    // 버튼이 활성화 되도록 한다.
+    ///////////////////////////////
     func MarkCurDay()
     {
         let firstIndex : Int = core.GetFirstDay(info: Param)
@@ -307,8 +284,6 @@ class ViewController: UIViewController {
         let nDayIndex = firstIndex + ToDay - 1
         let dayNums = core.GetNumDays(info: Param)
         
-        // 현재 달력에서 선택된 날이 유효할 경우에만 수정, 추가 버튼이 활성화 되도록한다.
-        // 디스플레이하기 전에는 보이지 않게 하도록 설정
         SelectTheDayBtn.isHidden = true
         
         for v : UIButton in DayBtns{
@@ -319,17 +294,17 @@ class ViewController: UIViewController {
                 //v.backgroundColor = UIColor.red
                 v.setTitleColor(.blue, for: .normal)
                 
-                // 선택될 날이 현재 달 유효한 날짜이면 수정, 추가 버튼이 보여지도록 한다.
                 SelectTheDayBtn.isHidden = false
                 
-                // 파라미터 정보를 디비를 저장하도록 한다.
                 core.UpDateConfigParam(info: Param)
             }
         }
     }
     
+    /////////////////////////////////////////////
     // 날짜 버튼을 눌렀을 때...
-    // 현재 달에 유효한 날짜가 아니면 예외처리...
+    // 현재 디스플레이 되는 날의 범위가 아니면 예외처리.
+    /////////////////////////////////////////////
     @IBAction func OnClickDayBtns(_ sender: UIButton) {
         let SelIndex = (sender.restorationIdentifier) ?? ""
         var index = Int(SelIndex)!
@@ -343,6 +318,9 @@ class ViewController: UIViewController {
         }
     }
     
+    //////////////////////////////////////////
+    // 현재 시간을 기준으로 달력을 업데이트.
+    //////////////////////////////////////////
     @IBAction func GoToHome(_ sender: Any) {
         core.GetTodayInfo(dayinfo: Param)
         CalendarDisplay()

@@ -24,6 +24,24 @@ class Core
     // 설정 파라미터 가져오기
     func GetGetConfigParam(info : ConfigDataParam){
         DBCtrl.SetParameters(info: info)
+        
+        // 현재 시간 또는 지정된 시간 정보를 가져옴
+        if(info.bSetCurTime == "0"){
+            GetTodayInfo(dayinfo: info)
+            
+        }
+        else{
+            info.bSetCurTime = "0"
+            UpDateConfigParam(info: info)
+        }
+        
+        // 기간 주기 설정이 자동 일경우 평균값을 계산하여 갱신한다.
+        // 입력된 데이터가 2개보다 작을 경우에는 디비에 설정된 값을 그대로 가져다 쓴다.
+        if(info.AutoCal == "1"){
+            info.Term = GetAvrTerm()
+            info.Cycle = GetAvrCycle()
+            UpDateConfigParam(info: info)
+        }
     }
     
     // 현재의 날짜 정보 가져오기
