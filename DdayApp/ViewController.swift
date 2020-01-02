@@ -313,7 +313,7 @@ class ViewController: UIViewController {
         let dayNums = core.GetNumDays(info: Param)
         
         if( index >= firstIndex && index < firstIndex + dayNums){
-            Param.CurDay = String(index - firstIndex + 1)
+            Param.CurDay = String(format : "%02d", index - firstIndex + 1)
             CalendarDisplay()
         }
     }
@@ -324,5 +324,9 @@ class ViewController: UIViewController {
     @IBAction func GoToHome(_ sender: Any) {
         core.GetTodayInfo(dayinfo: Param)
         CalendarDisplay()
+    }
+    @IBAction func OnClickAddData(_ sender: Any) {
+        Param.bSetCurTime = "0"
+        core.UpDateConfigParam(info: Param)
     }
 }

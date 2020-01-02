@@ -11,7 +11,7 @@ import Foundation
 // config Data Param
 class ConfigDataParam
 {
-    var bSetCurTime : String  = "0"
+    var bSetCurTime : String  = "1"
     var CurYear : String = "2019"
     var CurMonth : String = "11"
     var CurDay : String = "9"

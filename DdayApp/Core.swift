@@ -26,12 +26,12 @@ class Core
         DBCtrl.SetParameters(info: info)
         
         // 현재 시간 또는 지정된 시간 정보를 가져옴
-        if(info.bSetCurTime == "0"){
+        if(info.bSetCurTime == "1"){
             GetTodayInfo(dayinfo: info)
             
         }
         else{
-            info.bSetCurTime = "0"
+            info.bSetCurTime = "1"
             UpDateConfigParam(info: info)
         }
         

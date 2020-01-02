@@ -128,7 +128,7 @@ class SelectTheDay: UIViewController {
     
     func SaveConfigParam()
     {
-        param.bSetCurTime = "1"
+        param.bSetCurTime = "0"
         core.UpDateConfigParam(info: param)
         print(param.bSetCurTime)
     }

@@ -210,8 +210,8 @@ class CalendarClass{
         else{
             nMonth += 1
         }
-        info.CurYear = String(nYear)
-        info.CurMonth = String(nMonth)
+        info.CurYear = String(format : "%02d", nYear)
+        info.CurMonth = String(format : "%02d",nMonth)
     }
     
     func SetBeforeMonth(info : ConfigDataParam){
@@ -224,8 +224,8 @@ class CalendarClass{
         else{
             nMonth -= 1
         }
-        info.CurYear = String(nYear)
-        info.CurMonth = String(nMonth)
+        info.CurYear = String(format : "%02d",nYear)
+        info.CurMonth = String(format : "%02d",nMonth)
     }
     
     func GetNextDay(start : String, after : Int)->String{
