@@ -52,7 +52,7 @@ class DBClass
         
         TheDayDBPath = docsDir.appending("/TheDayDB009.db")
         LoveDayDBPath = docsDir.appending("/LoveDayDB002.db")
-        ConfigDBPath = docsDir.appending("/ConfigDB044.db")
+        ConfigDBPath = docsDir.appending("/ConfigDB047.db")
         
         // 생리
         if !filemgr.fileExists(atPath: TheDayDBPath) {

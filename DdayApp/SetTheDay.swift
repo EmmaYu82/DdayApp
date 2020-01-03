@@ -116,4 +116,14 @@ class SetTheDay: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource{
         core.UpDateConfigParam(info: Param)
     }
     
+    @IBAction func SetCycleTerm(_ sender: Any) {
+        if(AutoSet.isOn == false){
+           // Param.Term = SetTermValue.text!
+           //        Param.Cycle = SetCycleValue.text!
+                   core.UpDateConfigParam(info: Param)
+        }
+        else{
+            
+        }
+    }
 }
