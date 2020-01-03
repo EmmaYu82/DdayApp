@@ -21,6 +21,8 @@
 		C909B0D72377E4EF0003326D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B0D62377E4EF0003326D /* TableViewController.swift */; };
 		C909B118237800D30003326D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B117237800D30003326D /* TableViewCell.swift */; };
 		C911832C23767C7F007D35A8 /* CalendarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C911832B23767C7F007D35A8 /* CalendarClass.swift */; };
+		C977B3BF23BEFFCB00D31ED7 /* PassWordSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C977B3BE23BEFFCB00D31ED7 /* PassWordSet.swift */; };
+		C977B3C123BF031A00D31ED7 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C977B3C023BF031A00D31ED7 /* LoginPage.swift */; };
 		C9A2B9A4236406A200023522 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2B9A3236406A200023522 /* Core.swift */; };
 		C9A2BAB42365711C00023522 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A2BAB32365711C00023522 /* libsqlite3.tbd */; };
 		C9A2BAC32365715A00023522 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A2BABA2365715900023522 /* FMResultSet.m */; };
@@ -47,6 +49,8 @@
 		C909B0D62377E4EF0003326D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C909B117237800D30003326D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C911832B23767C7F007D35A8 /* CalendarClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarClass.swift; sourceTree = "<group>"; };
+		C977B3BE23BEFFCB00D31ED7 /* PassWordSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassWordSet.swift; sourceTree = "<group>"; };
+		C977B3C023BF031A00D31ED7 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		C9A2B9A3236406A200023522 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		C9A2BAB32365711C00023522 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C9A2BAB82365715900023522 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				691AF40923262A130011D64F /* AppDelegate.swift */,
+				C977B3C023BF031A00D31ED7 /* LoginPage.swift */,
 				691AF40B23262A130011D64F /* ViewController.swift */,
 				691AF40D23262A130011D64F /* Main.storyboard */,
 				691AF41023262A140011D64F /* Assets.xcassets */,
@@ -112,6 +117,7 @@
 				C909B0D62377E4EF0003326D /* TableViewController.swift */,
 				C909B117237800D30003326D /* TableViewCell.swift */,
 				C909AFE123A4AD3F0056DF17 /* TestClass.swift */,
+				C977B3BE23BEFFCB00D31ED7 /* PassWordSet.swift */,
 			);
 			path = DdayApp;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C977B3C123BF031A00D31ED7 /* LoginPage.swift in Sources */,
 				C909B118237800D30003326D /* TableViewCell.swift in Sources */,
+				C977B3BF23BEFFCB00D31ED7 /* PassWordSet.swift in Sources */,
 				C909B0D5237695500003326D /* DBClass.swift in Sources */,
 				C909B0D72377E4EF0003326D /* TableViewController.swift in Sources */,
 				C9A2B9A4236406A200023522 /* Core.swift in Sources */,

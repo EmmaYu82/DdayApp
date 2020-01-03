@@ -18,6 +18,7 @@ class ConfigDataParam
     var Term : String = "10"
     var Cycle : String = "28"
     var AutoCal : String = "0"
+    var Pass : String = "1234"
 }
 
 class TheDayInfo
@@ -51,7 +52,7 @@ class DBClass
         
         TheDayDBPath = docsDir.appending("/TheDayDB009.db")
         LoveDayDBPath = docsDir.appending("/LoveDayDB002.db")
-        ConfigDBPath = docsDir.appending("/ConfigDB008.db")
+        ConfigDBPath = docsDir.appending("/ConfigDB044.db")
         
         // 생리
         if !filemgr.fileExists(atPath: TheDayDBPath) {
@@ -85,7 +86,7 @@ class DBClass
         if !filemgr.fileExists(atPath: ConfigDBPath) {
             let contactDB = FMDatabase(path: ConfigDBPath)
             if contactDB.open() {
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, CONFIG TEXT, TERM TEXT, CYCLE TEXT, CURYEAR TEXT, CURMONTH TEXT, CURDAY TEXT, CURTIME TEXT, AUTOCAL TEXT)"
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, CONFIG TEXT, TERM TEXT, CYCLE TEXT, CURYEAR TEXT, CURMONTH TEXT, CURDAY TEXT, CURTIME TEXT, AUTOCAL TEXT, PASS TEXT)"
                 if !contactDB.executeStatements(sql_stmt) {
                     print("Error \(contactDB.lastErrorMessage())")
                 }
@@ -245,7 +246,7 @@ class DBClass
         let config : String = "config"
         
         if contactDB.open() {
-            let insertSQL = "INSERT INTO CONTACTS (config, term, cycle, curyear, curmonth, curday, curtime, autocal) VALUES ('\(config)', '\(info.Term)', '\(info.Cycle)', '\(info.CurYear)','\(info.CurMonth)','\(info.CurDay)', '\(info.bSetCurTime)', '\(info.AutoCal)')"
+            let insertSQL = "INSERT INTO CONTACTS (config, term, cycle, curyear, curmonth, curday, curtime, autocal, pass) VALUES ('\(config)', '\(info.Term)', '\(info.Cycle)', '\(info.CurYear)','\(info.CurMonth)','\(info.CurDay)', '\(info.bSetCurTime)', '\(info.AutoCal)', '\(info.Pass)')"
             
             let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
             
@@ -273,7 +274,7 @@ class DBClass
         let config : String = "config"
 
         if contactDB.open() {
-            let insertSQL = "UPDATE CONTACTS SET config = '\(config)', term = '\(info.Term)', cycle ='\(info.Cycle)', curyear = '\(info.CurYear)', curmonth = '\(info.CurMonth)', curday = '\(info.CurDay)', curtime = '\(info.bSetCurTime)', autocal = '\(info.AutoCal)' WHERE ?"
+            let insertSQL = "UPDATE CONTACTS SET config = '\(config)', term = '\(info.Term)', cycle ='\(info.Cycle)', curyear = '\(info.CurYear)', curmonth = '\(info.CurMonth)', curday = '\(info.CurDay)', curtime = '\(info.bSetCurTime)', autocal = '\(info.AutoCal)', pass = '\(info.Pass)' WHERE ? "
             
             let result = contactDB.executeUpdate(insertSQL,withArgumentsIn: [1])
             
@@ -382,7 +383,7 @@ class DBClass
         let contactDB = FMDatabase(path: ConfigDBPath)
         
         if contactDB.open() {
-            let querySQL = "SELECT term, cycle, curyear, curmonth, curday, curtime, autocal FROM CONTACTS WHERE config = config"
+            let querySQL = "SELECT term, cycle, curyear, curmonth, curday, curtime, autocal, pass FROM CONTACTS WHERE config = config"
             let result: FMResultSet? = contactDB.executeQuery(querySQL, withArgumentsIn: [])
             if result?.next() == true {
                 info.Term = (result?.string(forColumn: "term"))!
@@ -392,6 +393,7 @@ class DBClass
                 info.CurDay = (result?.string(forColumn: "curday"))!
                 info.bSetCurTime = (result?.string(forColumn: "curtime"))!
                 info.AutoCal = (result?.string(forColumn: "autocal"))!
+                info.Pass = (result?.string(forColumn: "pass"))!
             } else {
                 print("fail")
             }

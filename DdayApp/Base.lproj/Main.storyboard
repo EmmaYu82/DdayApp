@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2SS-ZY-Wuc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -159,6 +159,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V4H-08-CmR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cSr-3B-w8S"/>
                     <connections>
                         <outlet property="DatePicker" destination="aVb-tK-qAR" id="zQ9-7L-yvo"/>
                         <outlet property="DeleteTheDayBtn" destination="aDM-Dx-rga" id="j8W-4y-7tT"/>
@@ -179,7 +180,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="DdayApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartPoint" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="DdayApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -1152,6 +1153,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iXF-zQ-DHv"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Utu-Jr-WJq"/>
                     <connections>
                         <outlet property="tableView" destination="W39-Il-Ovr" id="aTp-0y-e7c"/>
                         <segue destination="Icb-Qa-FXa" kind="show" identifier="periodcal" id="loJ-Sq-tEW"/>
@@ -1222,6 +1224,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BTd-K4-63N"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KZD-8P-F2S"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVN-rU-52n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1279,6 +1282,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yh0-eR-ogq"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zba-z0-Yfx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7z7-nZ-xF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1474,6 +1478,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n0M-W5-QxN"/>
                     </view>
+                    <navigationItem key="navigationItem" id="y5a-Ou-Wt3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aeM-VS-J33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1542,6 +1547,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QUI-8c-3h5"/>
                     </view>
+                    <navigationItem key="navigationItem" id="iYr-dh-ks9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffE-c9-QXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1683,6 +1689,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Bg-6K-4Ye"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Xob-wv-72x"/>
                     <connections>
                         <outlet property="AutoSet" destination="srr-0c-eue" id="54M-DM-xoL"/>
                         <outlet property="SetCycle" destination="cyN-Yg-ukh" id="3Lc-VS-4jz"/>
@@ -1748,15 +1755,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DHG-L9-6Hs"/>
                     </view>
+                    <navigationItem key="navigationItem" id="TYL-kd-e5n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnc-0z-gUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1449" y="-956"/>
         </scene>
-        <!--View Controller-->
+        <!--Pass Word Set-->
         <scene sceneID="v2F-2M-H3C">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="O2j-hv-7Ec" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="O2j-hv-7Ec" customClass="PassWordSet" customModule="DdayApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iua-xc-2fv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1794,6 +1802,73 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmr-nj-VbM">
+                                <rect key="frame" x="153" y="186" width="170" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="기존 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0c-DS-EZS">
+                                <rect key="frame" x="46" y="182" width="73" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4B-yc-HcN">
+                                <rect key="frame" x="153" y="236" width="170" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="신규 번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hp-8g-PCf">
+                                <rect key="frame" x="46" y="232" width="73" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VA8-oG-oQ5">
+                                <rect key="frame" x="153" y="286" width="170" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="신규 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjJ-YL-9Ar">
+                                <rect key="frame" x="46" y="282" width="73" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="상태" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZo-V0-8cs">
+                                <rect key="frame" x="46" y="384" width="277" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lu9-jo-hS0">
+                                <rect key="frame" x="56" y="242" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34p-V3-YIT">
+                                <rect key="frame" x="56" y="242" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5d-gZ-WM5">
+                                <rect key="frame" x="46" y="342" width="277" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="변경하기"/>
+                                <connections>
+                                    <action selector="OnChangePassWord:" destination="O2j-hv-7Ec" eventType="touchUpInside" id="OYt-Pn-UPD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.94509803920000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1806,10 +1881,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xkW-cP-6x5"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SBl-OY-knL"/>
+                    <connections>
+                        <outlet property="Message" destination="YZo-V0-8cs" id="Pa1-Hq-pSt"/>
+                        <outlet property="NewPass" destination="y4B-yc-HcN" id="o8w-vR-yJB"/>
+                        <outlet property="NewPassCheck" destination="VA8-oG-oQ5" id="77Q-qh-R38"/>
+                        <outlet property="OldPass" destination="fmr-nj-VbM" id="ruC-cs-L6X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUp-rX-Ndk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2162" y="-956"/>
+            <point key="canvasLocation" x="2160.8695652173915" y="-956.25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RpQ-L0-Lx1">
@@ -1864,6 +1946,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gDA-sk-R29"/>
                     </view>
+                    <navigationItem key="navigationItem" id="112-mp-e1k"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bE-xx-aRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1921,10 +2004,52 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LGN-Vb-aIn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Viw-x1-u7J"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEF-Md-YHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3658" y="-956"/>
+        </scene>
+        <!--Login Page-->
+        <scene sceneID="cSx-hE-y1a">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="2SS-ZY-Wuc" customClass="LoginPage" customModule="DdayApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A04-C3-ZD7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="비밀 번호를 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cob-Lk-Ay0">
+                                <rect key="frame" x="49" y="117" width="224" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sk-Ja-eNd">
+                                <rect key="frame" x="171" y="292" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="확인"/>
+                                <connections>
+                                    <action selector="CheckPass:" destination="2SS-ZY-Wuc" eventType="touchUpInside" id="NxX-LL-Ank"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdg-F8-OBq">
+                                <rect key="frame" x="81" y="230" width="210" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="KPr-sI-wll"/>
+                    </view>
+                    <connections>
+                        <outlet property="Test" destination="xdg-F8-OBq" id="BcW-gH-uyF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWp-xs-bsl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-971.01449275362324" y="-657.58928571428567"/>
         </scene>
         <!--View The Day-->
         <scene sceneID="K1L-wZ-ubI">
@@ -2106,6 +2231,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nLU-Rg-hBS"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uIv-GV-Pwe"/>
                     <connections>
                         <outlet property="AvrCycleLabel" destination="VFE-6T-bZG" id="faV-gZ-cxS"/>
                         <outlet property="AvrTermLabel" destination="7WX-8x-4Tm" id="eGs-i1-b6P"/>
@@ -2137,7 +2263,7 @@
         <image name="start@1" width="342" height="319"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jm5-YA-S3Q"/>
+        <segue reference="u53-ef-uHv"/>
         <segue reference="Hn2-F9-xRq"/>
         <segue reference="9TZ-Zd-FK0"/>
     </inferredMetricsTieBreakers>
