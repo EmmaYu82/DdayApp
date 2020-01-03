@@ -36,8 +36,8 @@ class PassWordSet: UIViewController {
         else{
             param.Pass = NewPass.text!
             core.UpDateConfigParam(info: param)
-            core.GetGetConfigParam(info: param)
-            print(param.Pass)
+            //core.GetGetConfigParam(info: param)
+            //print(param.Pass)
             Message.text = "비밀번호가 변경되었습니다"
         }
     }

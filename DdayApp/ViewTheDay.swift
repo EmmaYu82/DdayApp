@@ -18,8 +18,8 @@ class ViewTheDay: UIViewController, UITableViewDataSource{
         arr = core.GetTheDayDB()
 
         
-        AvrTermLabel.text = core.GetAvrTerm(info: Param) + "일"
-        AvrCycleLabel.text = core.GetAvrCycle(info: Param) + "일"
+        //AvrTermLabel.text = core.GetAvrTerm(info: Param) + "일"
+        //AvrCycleLabel.text = core.GetAvrCycle(info: Param) + "일"
         
         self.tableview.dataSource = self
         self.tableview.tableFooterView = UIView(frame: .zero)

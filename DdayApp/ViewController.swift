@@ -134,7 +134,7 @@ class ViewController: UIViewController {
                 let end = start + days
                 for k in start...end{
                     if(k >= 0 && k < DayBtns.count){
-                        //DayBtns[k].backgroundColor = UIColor.yellow
+                        DayBtns[k].backgroundColor = UIColor.yellow
                         DayBtns[k].setTitleColor(.red, for:.normal)
                     }
                 }
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
                 let end = Int(endDay[2])! + firstIndex - 2
                 for k in start...end{
                     if(k >= 0 && k < DayBtns.count){
-                        //DayBtns[k].backgroundColor = UIColor.yellow
+                        DayBtns[k].backgroundColor = UIColor.yellow
                         DayBtns[k].setTitleColor(.red, for:.normal)
                     }
                 }
