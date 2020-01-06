@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var BeforMonthBtn: UIImageView!    // 이전 달 선택
     @IBOutlet weak var TimeInfo: UILabel!             // 달력 제목
     @IBOutlet weak var SelectTheDayBtn: UIButton!     // 달력 정보 업데이트
-
+    
+    @IBOutlet weak var sideBarbutton: UIBarButtonItem!
+    
     var DayBtns : [UIButton] = []  // 날짜 버튼 배열
     let core = Core()              // 주처리 클래스
     var Param = ConfigDataParam()  // 환경 설정 파라미터
@@ -29,7 +31,10 @@ class ViewController: UIViewController {
         core.CreateDB()                         // 데이터 베이스 연결
         core.GetGetConfigParam(info: Param)     // 환경 정보 가져오기
         CalendarDisplay()                       // 달력 디스플레이
-    }
+        
+        if let revealVC = self.revealViewController(){
+        self.sideBarButton.target = revealVC
+        self.sideBarButton.action = #selector(revealVC.revealToggle(_:))}    }
     
     /////////////////////////////////
     // 이미지에 버튼 이벤트 만들기
