@@ -33,8 +33,10 @@ class ViewController: UIViewController {
         CalendarDisplay()                       // 달력 디스플레이
         
         if let revealVC = self.revealViewController(){
-        self.sideBarButton.target = revealVC
-        self.sideBarButton.action = #selector(revealVC.revealToggle(_:))}    }
+         self.sideBarButton.target = revealVC
+         self.sideBarButton.action = #selector(revealVC.revealToggle(_:))}
+        
+    }
     
     /////////////////////////////////
     // 이미지에 버튼 이벤트 만들기
