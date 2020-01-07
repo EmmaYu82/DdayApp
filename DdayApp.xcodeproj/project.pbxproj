@@ -14,6 +14,7 @@
 		691AF41423262A140011D64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691AF41223262A140011D64F /* LaunchScreen.storyboard */; };
 		691CF995239F4DEB0084E173 /* SetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CF994239F4DEB0084E173 /* SetTableView.swift */; };
 		B5857ABF23C31EB900E1C7D9 /* rightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5857ABE23C31EB900E1C7D9 /* rightViewController.swift */; };
+		B5857AC423C41F7600E1C7D9 /* EmailVeiwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5857AC323C41F7600E1C7D9 /* EmailVeiwController.swift */; };
 		C909AFE223A4AD3F0056DF17 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909AFE123A4AD3F0056DF17 /* TestClass.swift */; };
 		C909B0CF237694890003326D /* ViewTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B0CE237694890003326D /* ViewTheDay.swift */; };
 		C909B0D12376949E0003326D /* SetTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B0D02376949E0003326D /* SetTheDay.swift */; };
@@ -45,6 +46,7 @@
 		B5857ABE23C31EB900E1C7D9 /* rightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rightViewController.swift; sourceTree = "<group>"; };
 		B5857AC123C419CA00E1C7D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		B5857AC223C419CA00E1C7D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		B5857AC323C41F7600E1C7D9 /* EmailVeiwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVeiwController.swift; sourceTree = "<group>"; };
 		C909AFE123A4AD3F0056DF17 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		C909B0CE237694890003326D /* ViewTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTheDay.swift; sourceTree = "<group>"; };
 		C909B0D02376949E0003326D /* SetTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTheDay.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				B5857ABE23C31EB900E1C7D9 /* rightViewController.swift */,
 				691AF40923262A130011D64F /* AppDelegate.swift */,
 				C977B3C023BF031A00D31ED7 /* LoginPage.swift */,
+				B5857AC323C41F7600E1C7D9 /* EmailVeiwController.swift */,
 				691AF40B23262A130011D64F /* ViewController.swift */,
 				691AF40D23262A130011D64F /* Main.storyboard */,
 				691AF41023262A140011D64F /* Assets.xcassets */,
@@ -250,6 +253,7 @@
 				C9A2BAC62365715A00023522 /* FMDatabase.m in Sources */,
 				C911832C23767C7F007D35A8 /* CalendarClass.swift in Sources */,
 				C909B0D12376949E0003326D /* SetTheDay.swift in Sources */,
+				B5857AC423C41F7600E1C7D9 /* EmailVeiwController.swift in Sources */,
 				C909AFE223A4AD3F0056DF17 /* TestClass.swift in Sources */,
 				C909B0D3237694DA0003326D /* SelectTheDay.swift in Sources */,
 				691CF995239F4DEB0084E173 /* SetTableView.swift in Sources */,
