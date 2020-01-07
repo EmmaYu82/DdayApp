@@ -32,10 +32,12 @@ class ViewController: UIViewController {
         core.GetGetConfigParam(info: Param)     // 환경 정보 가져오기
         CalendarDisplay()                       // 달력 디스플레이
         
-        if let revealVC = self.revealViewController(){
-         self.sideBarButton.target = revealVC
-         self.sideBarButton.action = #selector(revealVC.revealToggle(_:))}
-        
+        //슬라이드바 열기
+        sideBarbutton.target = self.revealViewController()
+        sideBarbutton.action = #selector(SWRevealViewController.revealToggle(_:))
+         
+        //손가락으로 밀어서 슬라이드 바 열기
+   self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
     /////////////////////////////////
