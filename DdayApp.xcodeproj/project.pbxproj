@@ -13,7 +13,6 @@
 		691AF41123262A140011D64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691AF41023262A140011D64F /* Assets.xcassets */; };
 		691AF41423262A140011D64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691AF41223262A140011D64F /* LaunchScreen.storyboard */; };
 		691CF995239F4DEB0084E173 /* SetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691CF994239F4DEB0084E173 /* SetTableView.swift */; };
-		B5857A9923C2C25C00E1C7D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5857A9723C2C25B00E1C7D9 /* SWRevealViewController.m */; };
 		B5857ABF23C31EB900E1C7D9 /* rightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5857ABE23C31EB900E1C7D9 /* rightViewController.swift */; };
 		C909AFE223A4AD3F0056DF17 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909AFE123A4AD3F0056DF17 /* TestClass.swift */; };
 		C909B0CF237694890003326D /* ViewTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909B0CE237694890003326D /* ViewTheDay.swift */; };
@@ -43,9 +42,9 @@
 		691AF41323262A140011D64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		691AF41523262A140011D64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		691CF994239F4DEB0084E173 /* SetTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableView.swift; sourceTree = "<group>"; };
-		B5857A9723C2C25B00E1C7D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
-		B5857A9823C2C25C00E1C7D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		B5857ABE23C31EB900E1C7D9 /* rightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rightViewController.swift; sourceTree = "<group>"; };
+		B5857AC123C419CA00E1C7D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		B5857AC223C419CA00E1C7D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C909AFE123A4AD3F0056DF17 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		C909B0CE237694890003326D /* ViewTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTheDay.swift; sourceTree = "<group>"; };
 		C909B0D02376949E0003326D /* SetTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTheDay.swift; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		691AF3FD23262A130011D64F = {
 			isa = PBXGroup;
 			children = (
+				B5857AC023C4199000E1C7D9 /* SWRevealViewController */,
 				C9A2BAC82365717800023522 /* FMDB */,
 				691AF40823262A130011D64F /* DdayApp */,
 				691AF40723262A130011D64F /* Products */,
@@ -105,8 +105,6 @@
 		691AF40823262A130011D64F /* DdayApp */ = {
 			isa = PBXGroup;
 			children = (
-				B5857A9823C2C25C00E1C7D9 /* SWRevealViewController.h */,
-				B5857A9723C2C25B00E1C7D9 /* SWRevealViewController.m */,
 				B5857ABE23C31EB900E1C7D9 /* rightViewController.swift */,
 				691AF40923262A130011D64F /* AppDelegate.swift */,
 				C977B3C023BF031A00D31ED7 /* LoginPage.swift */,
@@ -128,6 +126,15 @@
 				C977B3BE23BEFFCB00D31ED7 /* PassWordSet.swift */,
 			);
 			path = DdayApp;
+			sourceTree = "<group>";
+		};
+		B5857AC023C4199000E1C7D9 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B5857AC223C419CA00E1C7D9 /* SWRevealViewController.h */,
+				B5857AC123C419CA00E1C7D9 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		C9A2BAB22365711C00023522 /* Frameworks */ = {
@@ -237,7 +244,6 @@
 				C909B0D72377E4EF0003326D /* TableViewController.swift in Sources */,
 				C9A2B9A4236406A200023522 /* Core.swift in Sources */,
 				C909B0CF237694890003326D /* ViewTheDay.swift in Sources */,
-				B5857A9923C2C25C00E1C7D9 /* SWRevealViewController.m in Sources */,
 				C9A2BAC72365715A00023522 /* FMDatabaseQueue.m in Sources */,
 				C9A2BAC52365715A00023522 /* FMDatabasePool.m in Sources */,
 				691AF40C23262A130011D64F /* ViewController.swift in Sources */,
