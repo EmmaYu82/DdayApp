@@ -8,4 +8,5 @@ target 'DdayApp' do
   # Pods for DdayApp
   pod 'FMDB'
   pod 'SWRevealViewController'
+  pod 'Google-Mobile-Ads-SDK'
 end

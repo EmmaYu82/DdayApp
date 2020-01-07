@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     @IBOutlet weak var NextMonthBtn: UIImageView!     // 다음 달 선택
@@ -15,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var TimeInfo: UILabel!             // 달력 제목
     @IBOutlet weak var SelectTheDayBtn: UIButton!     // 달력 정보 업데이트
     
+    @IBOutlet weak var adBanner: GADBannerView!
     @IBOutlet weak var sideBarbutton: UIBarButtonItem!
     
     var DayBtns : [UIButton] = []  // 날짜 버튼 배열
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
         core.CreateDB()                         // 데이터 베이스 연결
         core.GetGetConfigParam(info: Param)     // 환경 정보 가져오기
         CalendarDisplay()                       // 달력 디스플레이
+        SetBanner()
         
         //슬라이드바 열기
         sideBarbutton.target = revealViewController()
@@ -39,6 +42,15 @@ class ViewController: UIViewController {
          
         //손가락으로 밀어서 슬라이드 바 열기
    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
+    
+    
+    
+    func SetBanner()
+    {
+        adBanner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        adBanner.rootViewController = self
+        adBanner.load(GADRequest())
     }
     
     /////////////////////////////////
