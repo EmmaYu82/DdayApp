@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         sideBarbutton.action = #selector(SWRevealViewController.rightRevealToggle(_:))
          
         //손가락으로 밀어서 슬라이드 바 열기
-   self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+   //self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
     

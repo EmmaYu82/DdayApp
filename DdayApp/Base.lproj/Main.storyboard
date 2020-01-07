@@ -1056,7 +1056,7 @@
                                 <segue destination="4HR-kS-QRo" kind="show" id="GFR-if-6Zr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="icon_check" id="Ki2-pf-g5y" userLabel="addBtn"/>
+                        <barButtonItem key="rightBarButtonItem" title="item" largeContentSizeImage="plus" catalog="system" id="Ki2-pf-g5y" userLabel="addBtn"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -2031,9 +2031,9 @@
         <image name="end@1" width="340" height="319"/>
         <image name="endbtn@1" width="375" height="375"/>
         <image name="heartStk@1" width="376" height="359"/>
-        <image name="icon_check" width="24" height="24"/>
         <image name="icon_menu" width="24" height="24"/>
         <image name="ovulation@1" width="375" height="362"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="splash@1" width="943" height="463"/>
         <image name="start@1" width="342" height="319"/>
     </resources>
