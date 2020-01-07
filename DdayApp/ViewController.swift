@@ -34,8 +34,8 @@ class ViewController: UIViewController {
         CalendarDisplay()                       // 달력 디스플레이
         
         //슬라이드바 열기
-        sideBarbutton.target = self.revealViewController()
-        sideBarbutton.action = #selector(SWRevealViewController.revealToggle(_:))
+        sideBarbutton.target = revealViewController()
+        sideBarbutton.action = #selector(SWRevealViewController.rightRevealToggle(_:))
          
         //손가락으로 밀어서 슬라이드 바 열기
    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
