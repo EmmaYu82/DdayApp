@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FMDB
 
 // config Data Param
 class ConfigDataParam

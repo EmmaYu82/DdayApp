@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,14 +27,11 @@
 		C977B3C123BF031A00D31ED7 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C977B3C023BF031A00D31ED7 /* LoginPage.swift */; };
 		C9A2B9A4236406A200023522 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2B9A3236406A200023522 /* Core.swift */; };
 		C9A2BAB42365711C00023522 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A2BAB32365711C00023522 /* libsqlite3.tbd */; };
-		C9A2BAC32365715A00023522 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A2BABA2365715900023522 /* FMResultSet.m */; };
-		C9A2BAC42365715A00023522 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A2BABB2365715900023522 /* FMDatabaseAdditions.m */; };
-		C9A2BAC52365715A00023522 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A2BABE2365715900023522 /* FMDatabasePool.m */; };
-		C9A2BAC62365715A00023522 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A2BABF2365715900023522 /* FMDatabase.m */; };
-		C9A2BAC72365715A00023522 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A2BAC22365715A00023522 /* FMDatabaseQueue.m */; };
+		E053D291D6BB927F66A85130 /* Pods_DdayApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB52570CBCC1E9CB39B716C /* Pods_DdayApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5DECBAE262B2D4DB2E2676AD /* Pods-DdayApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DdayApp.release.xcconfig"; path = "Target Support Files/Pods-DdayApp/Pods-DdayApp.release.xcconfig"; sourceTree = "<group>"; };
 		691AF40623262A130011D64F /* DdayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DdayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		691AF40923262A130011D64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		691AF40B23262A130011D64F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,8 +41,6 @@
 		691AF41523262A140011D64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		691CF994239F4DEB0084E173 /* SetTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableView.swift; sourceTree = "<group>"; };
 		B5857ABE23C31EB900E1C7D9 /* rightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rightViewController.swift; sourceTree = "<group>"; };
-		B5857AC123C419CA00E1C7D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		B5857AC223C419CA00E1C7D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		B5857AC323C41F7600E1C7D9 /* EmailVeiwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVeiwController.swift; sourceTree = "<group>"; };
 		C909AFE123A4AD3F0056DF17 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		C909B0CE237694890003326D /* ViewTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTheDay.swift; sourceTree = "<group>"; };
@@ -59,18 +54,8 @@
 		C977B3C023BF031A00D31ED7 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		C9A2B9A3236406A200023522 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		C9A2BAB32365711C00023522 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		C9A2BAB82365715900023522 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
-		C9A2BAB92365715900023522 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		C9A2BABA2365715900023522 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		C9A2BABB2365715900023522 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		C9A2BABC2365715900023522 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		C9A2BABD2365715900023522 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		C9A2BABE2365715900023522 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		C9A2BABF2365715900023522 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		C9A2BAC02365715900023522 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		C9A2BAC12365715A00023522 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		C9A2BAC22365715A00023522 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		C9A2BACD2365772E00023522 /* DdayApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DdayApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		CAB52570CBCC1E9CB39B716C /* Pods_DdayApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DdayApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C8DBF0E6D0650ADCDA608F /* Pods-DdayApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DdayApp.debug.xcconfig"; path = "Target Support Files/Pods-DdayApp/Pods-DdayApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9A2BAB42365711C00023522 /* libsqlite3.tbd in Frameworks */,
+				E053D291D6BB927F66A85130 /* Pods_DdayApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,11 +74,10 @@
 		691AF3FD23262A130011D64F = {
 			isa = PBXGroup;
 			children = (
-				B5857AC023C4199000E1C7D9 /* SWRevealViewController */,
-				C9A2BAC82365717800023522 /* FMDB */,
 				691AF40823262A130011D64F /* DdayApp */,
 				691AF40723262A130011D64F /* Products */,
 				C9A2BAB22365711C00023522 /* Frameworks */,
+				D9365B01A6854015826D6A97 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,40 +116,22 @@
 			path = DdayApp;
 			sourceTree = "<group>";
 		};
-		B5857AC023C4199000E1C7D9 /* SWRevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B5857AC223C419CA00E1C7D9 /* SWRevealViewController.h */,
-				B5857AC123C419CA00E1C7D9 /* SWRevealViewController.m */,
-			);
-			path = SWRevealViewController;
-			sourceTree = "<group>";
-		};
 		C9A2BAB22365711C00023522 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				C9A2BAB32365711C00023522 /* libsqlite3.tbd */,
+				CAB52570CBCC1E9CB39B716C /* Pods_DdayApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C9A2BAC82365717800023522 /* FMDB */ = {
+		D9365B01A6854015826D6A97 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2BACD2365772E00023522 /* DdayApp-Bridging-Header.h */,
-				C9A2BAC02365715900023522 /* FMDatabase.h */,
-				C9A2BABF2365715900023522 /* FMDatabase.m */,
-				C9A2BAC12365715A00023522 /* FMDatabaseAdditions.h */,
-				C9A2BABB2365715900023522 /* FMDatabaseAdditions.m */,
-				C9A2BABC2365715900023522 /* FMDatabasePool.h */,
-				C9A2BABE2365715900023522 /* FMDatabasePool.m */,
-				C9A2BABD2365715900023522 /* FMDatabaseQueue.h */,
-				C9A2BAC22365715A00023522 /* FMDatabaseQueue.m */,
-				C9A2BAB82365715900023522 /* FMDB.h */,
-				C9A2BAB92365715900023522 /* FMResultSet.h */,
-				C9A2BABA2365715900023522 /* FMResultSet.m */,
+				E9C8DBF0E6D0650ADCDA608F /* Pods-DdayApp.debug.xcconfig */,
+				5DECBAE262B2D4DB2E2676AD /* Pods-DdayApp.release.xcconfig */,
 			);
-			path = FMDB;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 691AF41823262A140011D64F /* Build configuration list for PBXNativeTarget "DdayApp" */;
 			buildPhases = (
+				6F1BF60F4EFBC2325E3D71C1 /* [CP] Check Pods Manifest.lock */,
 				691AF40223262A130011D64F /* Sources */,
 				691AF40323262A130011D64F /* Frameworks */,
 				691AF40423262A130011D64F /* Resources */,
+				A66C8E70E77A9A54B714F5A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +203,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F1BF60F4EFBC2325E3D71C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DdayApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A66C8E70E77A9A54B714F5A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DdayApp/Pods-DdayApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DdayApp/Pods-DdayApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DdayApp/Pods-DdayApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		691AF40223262A130011D64F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -247,19 +258,14 @@
 				C909B0D72377E4EF0003326D /* TableViewController.swift in Sources */,
 				C9A2B9A4236406A200023522 /* Core.swift in Sources */,
 				C909B0CF237694890003326D /* ViewTheDay.swift in Sources */,
-				C9A2BAC72365715A00023522 /* FMDatabaseQueue.m in Sources */,
-				C9A2BAC52365715A00023522 /* FMDatabasePool.m in Sources */,
 				691AF40C23262A130011D64F /* ViewController.swift in Sources */,
-				C9A2BAC62365715A00023522 /* FMDatabase.m in Sources */,
 				C911832C23767C7F007D35A8 /* CalendarClass.swift in Sources */,
 				C909B0D12376949E0003326D /* SetTheDay.swift in Sources */,
 				B5857AC423C41F7600E1C7D9 /* EmailVeiwController.swift in Sources */,
 				C909AFE223A4AD3F0056DF17 /* TestClass.swift in Sources */,
 				C909B0D3237694DA0003326D /* SelectTheDay.swift in Sources */,
 				691CF995239F4DEB0084E173 /* SetTableView.swift in Sources */,
-				C9A2BAC32365715A00023522 /* FMResultSet.m in Sources */,
 				691AF40A23262A130011D64F /* AppDelegate.swift in Sources */,
-				C9A2BAC42365715A00023522 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +348,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "FMDB/DdayApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -397,7 +402,6 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "FMDB/DdayApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -405,6 +409,7 @@
 		};
 		691AF41923262A140011D64F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9C8DBF0E6D0650ADCDA608F /* Pods-DdayApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -417,7 +422,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = swift.DdayApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FMDB/DdayApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,6 +430,7 @@
 		};
 		691AF41A23262A140011D64F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DECBAE262B2D4DB2E2676AD /* Pods-DdayApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -438,7 +443,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = swift.DdayApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FMDB/DdayApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
